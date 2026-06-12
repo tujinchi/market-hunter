@@ -1,0 +1,51 @@
+name: 市场猎手 · 每日自动选股
+
+on:
+  schedule:
+    # 北京时间 8:30 (UTC 0:30) 每个交易日
+    - cron: '30 0 * * 1-5'
+  # 也允许手动触发
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 运行自动选股管线
+        run: node scripts/auto-pipeline.js
+        env:
+          TZ: Asia/Shanghai
+          DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
+          DINGTALK_KEYWORD: ${{ secrets.DINGTALK_KEYWORD }}
+
+      - name: 提交更新
+        run: |
+          git config user.name "市场猎手 Bot"
+          git config user.email "bot@markethunter.app"
+          git add public/data/latest.json
+          if git diff --cached --quiet; then
+            echo "无数据变更，跳过提交"
+          else
+            git commit -m "🤖 每日自动更新 [$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M')]"
+            git push
+            echo "✅ 已推送最新选股数据"
+          fi
+
+      - name: 数据新鲜度徽章
+        if: success()
+        run: |
+          echo "📊 管线执行成功"
+          echo "🔗 手机访问: https://a65c72634f914fa09ee79d3ad34e5885.app.codebuddy.work/standalone.html"

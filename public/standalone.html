@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="市场猎手">
+<meta name="theme-color" content="#080c14">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="市场猎手">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180.png">
+<link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)" href="/icons/splash.png">
+<title>🦅 市场猎手</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #080c14; --surface: #0f1520; --card: #151c28; --border: #1e2d42;
+  --text: #e8edf4; --muted: #8899b4; --accent: #3b82f6;
+  --green: #10b981; --red: #ef4444; --gold: #fbbf24; --radius: 12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.container{max-width:800px;margin:0 auto;padding:16px 14px}
+.header{text-align:center;padding:24px 0 16px;border-bottom:1px solid var(--border);margin-bottom:18px}
+.header h1{font-size:1.6rem;background:linear-gradient(135deg,#60a5fa,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.header .sub{color:var(--muted);font-size:0.78rem}
+.sync-bar{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;padding:8px 14px;border-radius:8px;font-size:0.75rem}
+.sync-bar.online{background:rgba(16,185,129,.1);color:var(--green)}
+.sync-bar.offline{background:rgba(251,191,36,.1);color:var(--gold)}
+.sync-bar.expired{background:rgba(239,68,68,.12);color:var(--red)}
+.sync-bar button{background:transparent;border:1px solid var(--border);color:var(--accent);padding:4px 10px;border-radius:6px;font-size:0.7rem;cursor:pointer}
+.freshness-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-weight:700;font-size:0.68rem;margin-left:6px}
+.freshness-badge.fresh{background:rgba(16,185,129,.2);color:var(--green)}
+.freshness-badge.stale{background:rgba(251,191,36,.2);color:var(--gold)}
+.freshness-badge.rotten{background:rgba(239,68,68,.2);color:var(--red)}
+.tabs{display:flex;gap:0;margin-bottom:16px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface)}
+.tab{flex:1;padding:12px 14px;cursor:pointer;text-align:center;font-weight:600;border:none;background:transparent;color:var(--muted);transition:all .2s;font-size:0.85rem}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--accent);background:rgba(59,130,246,.12)}
+.panel{display:none;margin-bottom:16px}
+.panel.active{display:block}
+.btn{padding:14px 24px;border-radius:var(--radius);font-size:0.95rem;font-weight:700;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;width:100%;justify-content:center}
+.btn-primary{background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;box-shadow:0 4px 20px rgba(37,99,235,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(37,99,235,.45)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+textarea{width:100%;min-height:100px;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:12px;font-family:inherit;font-size:0.85rem;resize:vertical;margin-bottom:10px}
+textarea:focus{outline:none;border-color:var(--accent)}
+.status-bar{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 14px;margin-bottom:14px;display:flex;align-items:center;gap:10px;font-size:0.8rem}
+.status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.status-dot.idle{background:var(--muted)}
+.status-dot.running{background:var(--accent);animation:pulse 1.2s infinite}
+.status-dot.done{background:var(--green)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.results{margin-top:18px}
+.sector-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:12px;overflow:hidden}
+.sector-card.critical{border-left:3px solid var(--red)}
+.sector-card.high{border-left:3px solid #f59e0b}
+.sector-card.medium{border-left:3px solid var(--accent)}
+.sector-name{font-size:0.95rem;font-weight:700;margin-bottom:3px}
+.sector-gap{color:#f59e0b;font-size:0.75rem;margin-bottom:8px;line-height:1.4}
+.champs{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px}
+.champ-mini{padding:8px;background:var(--bg);border-radius:6px;border:1px solid var(--border);font-size:0.7rem;line-height:1.4}
+.champ-mini.top{border-color:var(--gold)}
+.rank-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:10px;display:flex;gap:10px;align-items:flex-start}
+.rank-card.top{border-color:var(--gold);background:rgba(251,191,36,.05)}
+.rank-num{font-size:1.5rem;font-weight:900;min-width:32px;text-align:center}
+.rank-body{flex:1;min-width:0}
+.rank-header{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.rank-name{font-size:0.95rem;font-weight:700}
+.rank-code{color:var(--muted);font-size:0.7rem}
+.rank-change{font-weight:600;font-size:0.78rem}
+.rank-change.up{color:var(--red)}.rank-change.down{color:var(--green)}
+.rank-score{margin-left:auto;font-size:1.1rem;font-weight:800;color:var(--accent)}
+.rank-metrics{display:flex;gap:10px;flex-wrap:wrap;font-size:0.68rem}
+.rank-metrics .l{color:var(--muted)}.rank-metrics .v{font-weight:600;margin-left:1px}
+.rank-reason{font-size:0.75rem;color:var(--muted);margin-top:4px;line-height:1.5}
+.rank-warning{font-size:0.7rem;color:#f59e0b;margin-top:3px}
+.disclaimer{text-align:center;font-size:0.68rem;color:var(--muted);margin-top:30px;padding:14px;border-top:1px solid var(--border);line-height:1.6}
+.excluded-section{margin-top:14px}
+.excluded-item{padding:8px 12px;background:var(--surface);border-radius:8px;margin-bottom:6px;font-size:0.72rem;border-left:2px solid var(--red)}
+.step-log{padding:8px;font-size:0.7rem;color:var(--muted);min-height:20px}
+@media(max-width:480px){
+  .container{padding:10px 8px}
+  .header h1{font-size:1.3rem}
+  .tabs{flex-direction:row}
+  .tab{padding:10px 8px;font-size:0.78rem}
+  .champs{grid-template-columns:1fr}
+  .btn{padding:12px 16px;font-size:0.85rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🦅 市场猎手</h1>
+    <div class="sync-bar offline" id="sync-bar">
+      <span id="sync-icon">📡</span>
+      <span id="sync-text">检查数据源...</span>
+      <button onclick="refreshLatest()" id="sync-btn" style="display:none">🔄 刷新</button>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('auto')">🔄 一键扫雷</button>
+    <button class="tab" onclick="switchTab('manual')">✍️ 输入消息</button>
+    <button class="tab" onclick="switchTab('history')">📊 历史</button>
+  </div>
+
+  <div class="panel active" id="p-auto">
+    <button class="btn btn-primary" onclick="runAuto()" id="btn-auto">
+      <span>⚡</span> 立即运行全流程
+    </button>
+  </div>
+
+  <div class="panel" id="p-manual">
+    <textarea id="msg-in" placeholder="粘贴你听到的供应链消息...&#10;例如：沙特某化工基地停产，全球70% PPE树脂断供..."></textarea>
+    <button class="btn btn-primary" onclick="runManual()" id="btn-manual">
+      <span>🔍</span> 结合输入运行分析
+    </button>
+  </div>
+
+  <div class="panel" id="p-history">
+    <div id="history-list" style="margin-bottom:16px">加载中...</div>
+    <div id="history-chart-container" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-top:12px">
+      <canvas id="history-chart" height="200"></canvas>
+    </div>
+  </div>
+
+  <div class="status-bar" id="status-bar" style="display:none">
+    <span class="status-dot running" id="s-dot"></span>
+    <span id="s-text">分析中...</span>
+  </div>
+
+  <div class="results" id="results"></div>
+
+  <div class="disclaimer">
+    <strong>⚠️ 免责声明：</strong>以上由AI基于公开数据整理，不构成投资建议。投资有风险，决策需谨慎。
+  </div>
+</div>
+
+<script>
+// =============================================
+// CONFIG: 数据源URL（部署后自动指向 latest.json）
+// =============================================
+const DATA_URL = 'data/latest.json';
+const DATA_TTL_MS = 4 * 60 * 60 * 1000; // 4小时过期
+
+// =============================================
+// FALLBACK: 嵌入式离线数据库（仅在无法联网时使用）
+// =============================================
+const FALLBACK_DB = {
+  'PPE树脂':[{c:'605589',n:'圣泉集团',rk:'PPE树脂国产唯一认证',sh:'唯一',pu:95,nt:'碳氢树脂同步，合成树脂平台'},
+            {c:'002669',n:'康达新材',rk:'环氧树脂龙头',sh:'~8%',pu:50,nt:'环氧为主，PPE在研'}],
+  '覆铜板':[{c:'600183',n:'生益科技',rk:'国内CCL龙头',sh:'~15%',pu:92,nt:'Q1净利+106%，高速CCL放量'},
+            {c:'603186',n:'华正新材',rk:'高频高速CCL',sh:'~5%',pu:70,nt:'5G/数据中心CCL'}],
+  'MLCC':[{c:'300408',n:'三环集团',rk:'国产全球份额第一',sh:'2.5%',pu:98,nt:'粉体100%自给，毛利率42%，高容占30%'},
+          {c:'000636',n:'风华高科',rk:'产能国产第一',sh:'1.9%',pu:80,nt:'粉体外购，毛利率16%⚠️'}],
+  '钼':[{c:'601958',n:'金钼股份',rk:'亚洲最大钼矿',sh:'领先',pu:98,nt:'金堆城钼矿，PE 24x'},
+        {c:'603993',n:'洛阳钼业',rk:'全球前五钼生产商',sh:'全球前五',pu:85,nt:'钼+铜+钴多金属，PE 17x'}],
+  '存储':[{c:'688525',n:'佰维存储',rk:'存储模组龙头',sh:'领先',pu:93,nt:'18.6亿美元长单锁至2028'},
+          {c:'688008',n:'澜起科技',rk:'DDR5接口芯片全球~40%','sh':'40%',pu:90,nt:'全球三强'},
+          {c:'603986',n:'兆易创新',rk:'NOR Flash国内第一',sh:'~15%',pu:88,nt:'NOR+MCU双龙头'}],
+  'WF6':[{c:'688146',n:'中船特气',rk:'WF6国内龙头',sh:'领先',pu:70,nt:'⚠️公司澄清无新增大额订单'}],
+  '氦气':[{c:'605090',n:'九丰能源',rk:'国产提氦稀缺',sh:'稀缺',pu:90,nt:'BOG提氦150万方/年，PE 18.7x'},
+          {c:'688548',n:'广钢气体',rk:'唯一多气源长协内资',sh:'领先',pu:88,nt:'近百液氦冷箱'}],
+  '磷化铟':[{c:'002428',n:'云南锗业',rk:'锗全产业链+磷化铟',sh:'领先',pu:65,nt:'供需缺口>70%'}],
+  'PCB':[{c:'002916',n:'深南电路',rk:'AI服务器高多层PCB龙头',sh:'领先',pu:85,nt:'华为核心供应商'}],
+  '电子布':[{c:'600176',n:'中国巨石',rk:'全球玻纤龙头',sh:'~20%',pu:80,nt:'电子布+风电纱'}]
+};
+const FALLBACK_Q = {
+  '605589':{p:58.32,ch:-3.36,pe:51.2,ytd:108,t:4.8,mf:-2850},
+  '600183':{p:151.28,ch:1.04,pe:94.3,ytd:114,t:5.2,mf:40230},
+  '300408':{p:126.5,ch:-3.9,pe:84.1,ytd:179,t:3.2,mf:-18900},
+  '000636':{p:59.12,ch:-8.06,pe:222.6,ytd:263,t:18.7,mf:-45600},
+  '601958':{p:25.52,ch:10,pe:24.4,ytd:64,t:0.5,mf:12800},
+  '603993':{p:19.11,ch:10,pe:16.9,ytd:-3,t:3.1,mf:65000},
+  '688525':{p:327.9,ch:1.12,pe:39.2,ytd:186,t:11.4,mf:-3520},
+  '688008':{p:224.88,ch:-1.67,pe:107.5,ytd:91,t:7.8,mf:-94700},
+  '603986':{p:481.47,ch:-0.42,pe:117.4,ytd:126,t:5.3,mf:-28100},
+  '688146':{p:302,ch:-13.66,pe:443.9,ytd:648,t:19.6,mf:-21100},
+  '605090':{p:37.28,ch:2.61,pe:18.7,ytd:-13,t:3.3,mf:3221},
+  '688548':{p:28.95,ch:-11.74,pe:119,ytd:99,t:7.2,mf:-3372},
+  '002428':{p:92.26,ch:4.56,pe:1050,ytd:86,t:8.9,mf:5600},
+  '002916':{p:379.5,ch:0.89,pe:71.2,ytd:92,t:4.6,mf:12800},
+  '600176':{p:15.8,ch:-1.2,pe:18.5,ytd:22,t:2.1,mf:3500},
+};
+const FALLBACK_PRESETS = [
+  {n:'PPE树脂 → CCL → AI服务器PCB',gp:'PPE树脂',tr:'沙特朱拜勒停产→全球70% PPE断供',dr:'至少至2027',pc:'PCB涨40%',sv:'critical',kw:['PPE','聚苯醚','树脂','覆铜板','CCL','PCB','沙特']},
+  {n:'MLCC被动元器件',gp:'AI服务器高容MLCC',tr:'日系优先供CSP→国内下游被挤出',dr:'结构性长期',pc:'高容涨50-60%',sv:'critical',kw:['MLCC','村田','电容','被动元件','三环','风华']},
+  {n:'钼金属→半导体战略材料',gp:'半导体级钼',tr:'SK海力士以钼代钨制375层NAND',dr:'3-5年',pc:'钼精矿涨至4500+',sv:'critical',kw:['钼','金钼','洛阳','SK海力士','NAND']},
+  {n:'存储芯片产能锁死',gp:'DRAM/NAND模组',tr:'CSP龙头锁死2027-2028全部产能',dr:'至2028',pc:'车规涨180%',sv:'critical',kw:['存储','DRAM','佰维','澜起','长单']},
+  {n:'六氟化钨WF6',gp:'高纯6N/7N WF6',tr:'中国钨管制→日企或7月停产',dr:'不确定',pc:'6N涨190%+',sv:'high',kw:['WF6','六氟化钨','钨','中船']},
+  {n:'氦气双断供',gp:'高纯氦气',tr:'卡塔尔+俄罗斯→进口98.6%中断',dr:'至2027',pc:'国产涨490%',sv:'critical',kw:['氦气','氦','九丰','广钢','提氦']},
+  {n:'磷化铟衬底',gp:'InP衬底',tr:'800G→1.6T光模块→缺口>70%',dr:'长期',pc:'供货12月+',sv:'medium',kw:['磷化铟','InP','衬底','云南锗业']},
+  {n:'电子布',gp:'低介电电子布',tr:'AI需求+供给刚性（设备限制）',dr:'中长期',pc:'涨117%',sv:'medium',kw:['电子布','玻纤','低介电']},
+];
+
+// =============================================
+// STATE
+// =============================================
+let activeTab='auto',running=false,dataSource='offline',dataTimestamp=null;
+let latestData=null; // 云端拉取的最新数据
+let DB=FALLBACK_DB, Q=FALLBACK_Q, PRESETS=FALLBACK_PRESETS;
+
+// =============================================
+// DATA FETCH: 自动从云端拉取最新分析结果
+// =============================================
+async function refreshLatest(showToast=true){
+  const bar=document.getElementById('sync-bar');
+  const icon=document.getElementById('sync-icon');
+  const text=document.getElementById('sync-text');
+  const btn=document.getElementById('sync-btn');
+  icon.textContent='⏳';text.textContent='拉取最新数据...';
+  bar.className='sync-bar offline';
+  if(btn)btn.style.display='none';
+
+  try{
+    const resp=await fetch(DATA_URL+'?t='+Date.now(),{cache:'no-store'});
+    if(!resp.ok)throw new Error('HTTP '+resp.status);
+    const json=await resp.json();
+
+    // 验证数据格式
+    if(!json.sectors||!json.results||!json.ts)throw new Error('数据格式不完整');
+
+    latestData=json;
+    dataSource='online';
+    dataTimestamp=json.ts;
+    const age=ageStr(json.ts);
+    const cls=ageClass(json.ts);
+
+    icon.textContent=cls==='fresh'?'🟢':(cls==='stale'?'🟡':'🔴');
+    text.innerHTML='数据同步自云端 · '+formatTs(json.ts)+' <span class="freshness-badge '+cls+'">'+age+'</span>';
+    bar.className='sync-bar '+(cls==='rotten'?'expired':(cls==='stale'?'offline':'online'));
+    if(btn)btn.style.display='inline-block';
+    if(showToast)logToast(cls==='fresh'?'✅ 数据新鲜（'+age+'）':(cls==='stale'?'⚠️ 数据已 '+age+'，建议刷新':'🔴 数据过期（'+age+'），请手动运行完整版'));
+    return true;
+  }catch(e){
+    dataSource='offline';
+    icon.textContent='⚠️';text.innerHTML='离线模式 · 内置数据库 <span class="freshness-badge rotten">无云端</span>';
+    bar.className='sync-bar offline';
+    if(btn)btn.style.display='inline-block';
+    console.warn('fetch latest.json failed:',e.message);
+    if(showToast)logToast('⚠️ 云端不可用，使用离线数据');
+    return false;
+  }
+}
+
+function formatTs(ts){
+  try{const d=new Date(ts);return d.getFullYear()+'-'+(d.getMonth()+1).toString().padStart(2,'0')+'-'+d.getDate().toString().padStart(2,'0')+' '+d.getHours().toString().padStart(2,'0')+':'+d.getMinutes().toString().padStart(2,'0')}
+  catch(e){return ts}
+}
+
+function ageStr(ts){
+  try{
+    const now=Date.now(),then=new Date(ts).getTime(),diff=now-then;
+    const m=Math.floor(diff/60000),h=Math.floor(m/60),d=Math.floor(h/24);
+    if(m<1)return '刚刚';
+    if(m<60)return m+'分钟前';
+    if(h<24)return h+'小时前';
+    if(d<3)return d+'天前';
+    return d+'天前';
+  }catch(e){return '未知'}
+}
+
+function ageClass(ts){
+  try{
+    const now=Date.now(),then=new Date(ts).getTime(),diff=now-then;
+    const h=diff/3600000;
+    if(h<12)return 'fresh';   // 12小时内: 新鲜
+    if(h<36)return 'stale';   // 12-36小时: 略陈旧
+    return 'rotten';           // >36小时: 过期
+  }catch(e){return 'rotten'}
+}
+
+function logToast(msg){
+  const el=document.getElementById('results');
+  el.innerHTML='<div style="text-align:center;padding:20px;color:var(--muted);font-size:0.85rem">'+msg+'</div>';
+}
+
+// =============================================
+// PWA: 注册 Service Worker
+// =============================================
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('/sw.js',{scope:'/'})
+      .then(reg=>console.log('[PWA] SW 已注册, scope:',reg.scope))
+      .catch(err=>console.warn('[PWA] SW 注册失败:',err));
+  });
+}
+
+// =============================================
+// PWA: 安装提示
+// =============================================
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt',(e)=>{
+  e.preventDefault();
+  deferredPrompt=e;
+  const bar=document.getElementById('install-bar');
+  if(bar)bar.style.display='flex';
+});
+
+// =============================================
+// INIT: 页面加载时自动拉取
+// =============================================
+(async function init(){
+  await refreshLatest(false);
+  // 如果有云端数据，立即渲染
+  if(latestData){
+    renderFromCloud(latestData);
+  }
+})();
+
+// =============================================
+// RENDER FROM CLOUD DATA
+// =============================================
+function renderFromCloud(data){
+  const el=document.getElementById('results');
+  const ts=formatTs(data.ts);
+  let h='<div style="margin-bottom:12px;padding:10px 14px;background:rgba(16,185,129,.08);border-radius:10px;font-size:0.78rem;color:var(--green)">✅ 数据时间：<b>'+ts+'</b> · 来源：云端 latest.json · 版本：'+data.version+'</div>';
+
+  // Sectors
+  h+='<h3 style="margin-bottom:8px;font-size:0.9rem">🏭 供给瓶颈赛道（'+data.sectors.length+'个）</h3>';
+  for(const s of data.sectors){
+    h+='<div class="sector-card '+s.sv+'"><div class="sector-name">'+s.n+'</div><div class="champs">';
+    const chs=s.champions||[];
+    for(let i=0;i<Math.min(chs.length,3);i++){
+      const c=chs[i];h+='<div class="champ-mini '+(i===0?'top':'')+'"><strong>'+['🥇','🥈','🥉'][i]+' '+c.n+'('+c.c+')</strong><br>'+c.rk+'<br>市占率: '+c.sh+'</div>';
+    }
+    h+='</div></div>';
+  }
+
+  // Ranked results
+  h+='<h3 style="margin:18px 0 10px;font-size:0.9rem">🏆 综合评分排序（'+data.results.length+'只）</h3>';
+  const sorted=[...data.results].sort((a,b)=>b.total-a.total);
+  for(let i=0;i<sorted.length;i++){
+    const r=sorted[i],rank=i+1;
+    const q=r.quote||{};
+    const ch=(q.ch||0)>=0?'up':'down',sgn=(q.ch||0)>=0?'+':'';
+    const medal=rank===1?'🥇':rank===2?'🥈':rank===3?'🥉':'#'+rank;
+    h+='<div class="rank-card '+(rank===1?'top':'')+'"><div class="rank-num">'+medal+'</div><div class="rank-body"><div class="rank-header"><span class="rank-name">'+r.n+'</span><span class="rank-code">'+r.c+'</span><span class="rank-change '+ch+'">'+sgn+(q.ch||0).toFixed(2)+'%</span><span class="rank-score">'+(r.total||0)+'<small style="font-size:0.55rem;color:var(--muted)">/100</small></span></div><div class="rank-metrics"><span><span class="l">PE</span><span class="v">'+(q.pe>0?q.pe.toFixed(1):'亏损')+'</span></span><span><span class="l">YTD</span><span class="v">'+(q.ytd||0).toFixed(1)+'%</span></span><span><span class="l">市占率</span><span class="v">'+r.sh+'</span></span></div><div class="rank-reason">📌 '+((r.rs||[]).join(' | ')||'赛道: '+r.sector)+'</div>'+(r.ws&&r.ws.length>0?'<div class="rank-warning">⚠️ '+r.ws.join(' | ')+'</div>':'')+'</div></div>';
+  }
+
+  // Excluded
+  if(data.excluded&&data.excluded.length>0){
+    h+='<div class="excluded-section"><h3 style="margin:16px 0 8px;font-size:0.85rem;color:var(--red)">❌ 本轮排除标的（不满足冠军标准）</h3>';
+    for(const x of data.excluded){
+      h+='<div class="excluded-item"><strong>'+x.n+'('+x.c+')</strong>：'+x.reason+'</div>';
+    }
+    h+='</div>';
+  }
+  el.innerHTML=h;
+}
+
+// =============================================
+// TAB SWITCH
+// =============================================
+function switchTab(t){
+  activeTab=t;
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.querySelector('[onclick="switchTab(\''+t+'\')"]').classList.add('active');
+  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+  document.getElementById('p-'+t).classList.add('active');
+  if(t==='history')loadHistory();
+}
+
+// =============================================
+// CLIENT-SIDE PIPELINE (fallback when offline)
+// =============================================
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+async function runAuto(){await executeRun('auto',null)}
+async function runManual(){
+  const m=document.getElementById('msg-in').value.trim();
+  if(m.length<10){alert('请输入至少10个字符');return}
+  await executeRun('manual',m)
+}
+
+async function executeRun(mode,msg){
+  if(running)return;running=true;
+  const btn=document.getElementById('btn-'+mode);
+  btn.disabled=true;btn.innerHTML='<span>⏳</span> 运行中...';
+  const sb=document.getElementById('status-bar');sb.style.display='flex';
+  const sd=document.getElementById('s-dot');sd.className='status-dot running';
+  const st=document.getElementById('s-text');
+
+  // Phase 1: select sectors
+  st.textContent='分析中...';
+  await sleep(500);
+  let sectors=PRESETS.slice(0,7);
+  if(mode==='manual'&&msg){
+    const lower=msg.toLowerCase();const matched=[];
+    for(const s of PRESETS){let hits=0;for(const k of s.kw){if(lower.includes(k.toLowerCase()))hits++}if(hits>=1)matched.push(s)}
+    if(matched.length>0)sectors=matched;
+  }
+  await sleep(300);
+
+  // Phase 2: find champions
+  st.textContent='分析中...';
+  await sleep(400);
+  const sectorData=[];
+  for(const s of sectors){
+    let champs=[];
+    for(const[k,v]of Object.entries(DB)){
+      if(s.gp.includes(k)||s.n.includes(k)||k.includes(s.gp)){champs=v;break}
+    }
+    if(champs.length===0){
+      for(const[k,v]of Object.entries(DB)){
+        const gk=s.gp.slice(0,3);
+        if(k.includes(gk)||gk.includes(k)){champs=v.slice(0,2);break}
+      }
+    }
+    sectorData.push({...s,champions:champs.slice(0,3)});
+  }
+  st.textContent='分析中...';
+  await sleep(300);
+
+  // Phase 3: cross-match
+  st.textContent='分析中...';
+  await sleep(400);
+  const matches=[];
+  for(const s of sectorData){
+    for(const c of s.champions){
+      let ms=40;const rs=[],ws=[];
+      if(c.pu>=90){ms+=20;rs.push('冠军纯度极高')}else if(c.pu>=70)ms+=12;
+      if(c.nt.includes('唯一')||c.sh==='唯一'){ms+=25;rs.push('国产唯一供应商')}
+      if(c.nt.includes('澄清')||c.nt.includes('无新增')){ms-=25;ws.push('公司已澄清无新增订单')}
+      if(c.nt.includes('外购')||c.nt.includes('代理')){ms-=20;ws.push('非自主生产者')}
+      if(c.nt.includes('自给')||c.nt.includes('自主')){ms+=10;rs.push('上游自主可控')}
+      const q=Q[c.c]||{p:0,ch:0,pe:50,ytd:50,t:5,mf:0};
+      let vs=10;if(q.pe<25)vs=18;else if(q.pe<50)vs=15;else if(q.pe<80)vs=12;else if(q.pe<200)vs=6;else vs=3;
+      if(q.ytd>300)vs=Math.max(1,vs-8);else if(q.ytd>150)vs=Math.max(1,vs-4);
+      let ts=10;if(q.ch>9)ts+=3;else if(q.ch<-10)ts-=5;else if(q.ch<-7)ts-=3;else if(q.ch>0)ts+=1;
+      if(q.t>15)ts-=2;else if(q.t<2)ts+=1;
+      let fs=5;if(q.mf>50000)fs=9;else if(q.mf>10000)fs=8;else if(q.mf>0)fs=7;else if(q.mf>-5000)fs=5;else fs=2;
+      matches.push({c:c.c,n:c.n,rk:c.rk,sh:c.sh,pu:c.pu,nt:c.nt,sector:s.n,score:Math.min(99,Math.max(30,ms)),vs,ts,fs,rs,ws,quote:q});
+    }
+  }
+  matches.sort((a,b)=>b.score-a.score);
+  const final=matches.slice(0,10).map((m,i)=>({...m,rank:i+1,total:Math.round(m.score+m.vs+m.ts+m.fs)}));
+  st.textContent='分析中...';
+  await sleep(300);
+
+  // Phase 4: scoring
+  st.textContent='分析中...';
+  await sleep(300);
+  final.sort((a,b)=>b.total-a.total);
+  final.forEach((m,i)=>m.rank=i+1);
+  st.textContent='分析中...';
+
+  // Phase 5: render
+  st.textContent='分析中...';
+  await sleep(200);
+  sd.className='status-dot done';
+  st.textContent='✅ 完成！'+sectorData.length+'个赛道 · '+final.length+'只标的';
+  renderResults(sectorData,final);
+  btn.disabled=false;btn.innerHTML=mode==='auto'?'<span>⚡</span> 立即运行全流程':'<span>🔍</span> 结合输入运行分析';
+  running=false;
+}
+
+// =============================================
+// FALLBACK RENDER (离线模式客户端模拟结果)
+// =============================================
+function renderResults(sectors,results){
+  const el=document.getElementById('results');
+  let h='<div style="margin-bottom:12px;padding:10px 14px;background:rgba(251,191,36,.08);border-radius:10px;font-size:0.78rem;color:var(--gold)">⚠️ 离线模式 · 使用内置数据库 · '+new Date().toLocaleString()+'</div>';
+
+  // Summary
+  h+='<div class="status-bar" style="margin-bottom:14px"><span class="status-dot done"></span><span>覆盖 <b>'+sectors.length+'</b> 个赛道 · 入选 <b>'+results.length+'</b> 只标的</span></div>';
+
+  // Sectors
+  h+='<h3 style="margin-bottom:8px;font-size:0.9rem">🏭 供给瓶颈赛道</h3>';
+  for(const s of sectors){
+    h+='<div class="sector-card '+s.sv+'"><div class="sector-name">'+s.n+'</div><div class="champs">';
+    for(let i=0;i<Math.min(s.champions.length,3);i++){
+      const c=s.champions[i];h+='<div class="champ-mini '+(i===0?'top':'')+'"><strong>'+['🥇','🥈','🥉'][i]+' '+c.n+'('+c.c+')</strong><br>'+c.rk+'<br>市占率: '+c.sh+'</div>';
+    }
+    h+='</div></div>';
+  }
+
+  // Ranking
+  h+='<h3 style="margin:18px 0 10px;font-size:0.9rem">🏆 综合评分排序</h3>';
+  for(const r of results){
+    const ch=r.quote.ch>=0?'up':'down';const sgn=r.quote.ch>=0?'+':'';
+    h+='<div class="rank-card '+(r.rank===1?'top':'')+'"><div class="rank-num">'+(r.rank===1?'🥇':r.rank===2?'🥈':r.rank===3?'🥉':'#'+r.rank)+'</div><div class="rank-body"><div class="rank-header"><span class="rank-name">'+r.n+'</span><span class="rank-code">'+r.c+'</span><span class="rank-change '+ch+'">'+sgn+r.quote.ch.toFixed(2)+'%</span><span class="rank-score">'+r.total+'<small style="font-size:0.55rem;color:var(--muted)">/100</small></span></div><div class="rank-metrics"><span><span class="l">PE</span><span class="v">'+(r.quote.pe>0?r.quote.pe.toFixed(1):'亏损')+'</span></span><span><span class="l">YTD</span><span class="v">'+r.quote.ytd.toFixed(1)+'%</span></span><span><span class="l">市占率</span><span class="v">'+r.sh+'</span></span></div><div class="rank-reason">📌 '+r.rs.join(' | ')+'</div>'+(r.ws.length>0?'<div class="rank-warning">⚠️ '+r.ws.join(' | ')+'</div>':'')+'</div></div>';
+  }
+
+  // Method note — hidden
+  el.innerHTML=h;
+}
+
+// =============================================
+// HISTORY TAB: 历史记录 + 图表
+// =============================================
+let historyChart = null;
+
+async function loadHistory() {
+  const listEl = document.getElementById('history-list');
+  listEl.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted)">⏳ 加载历史记录...</div>';
+
+  try {
+    const resp = await fetch('data/history.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    renderHistoryList(data);
+    renderHistoryChart(data);
+  } catch (e) {
+    listEl.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted)">⚠️ 暂无历史记录（请先运行完整版生成数据）</div>';
+    console.warn('loadHistory failed:', e.message);
+  }
+}
+
+function renderHistoryList(records) {
+  const listEl = document.getElementById('history-list');
+  if (!records || records.length === 0) {
+    listEl.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted)">暂无历史记录</div>';
+    return;
+  }
+
+  let h = '<h3 style="margin-bottom:10px;font-size:0.9rem">📊 历史分析记录（' + records.length + '条）</h3>';
+  for (const rec of records) {
+    const ts = formatTs(rec.createdAt || rec.completedAt || '');
+    const top3 = rec.topThree ? rec.topThree.replace(/\n/g, '<br>') : '（无详情）';
+    h += '<div class="sector-card medium" style="cursor:pointer" onclick="showHistoryDetail(\'' + rec.id + '\')">'
+      + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">'
+      + '<span style="font-weight:700;font-size:0.85rem">' + (rec.mode === 'auto' ? '🔄 自动' : '✍️ 手动') + ' · ' + ts + '</span>'
+      + '<span style="font-size:0.7rem;color:var(--muted)">' + (rec.resultCount || 0) + '只标的 · ' + (rec.sectorCount || 0) + '个赛道</span>'
+      + '</div>'
+      + '<div style="font-size:0.72rem;color:var(--muted);line-height:1.5">' + top3 + '</div>'
+      + '</div>';
+  }
+  listEl.innerHTML = h;
+}
+
+function showHistoryDetail(id) {
+  // 从 history.json 里找到这条记录，然后模拟"云端数据"渲染
+  fetch('data/history.json?t=' + Date.now(), { cache: 'no-store' })
+    .then(r => r.json())
+    .then(data => {
+      const rec = data.find(x => x.id === id);
+      if (!rec) { alert('记录不存在'); return; }
+      // 切换到"一键扫雷"tab，显示这个结果
+      // 注意：history record 只有摘要，没有完整 sectors/results
+      // 所以需要去读完整分析文件 data/analyses/{id}.json
+      loadFullAnalysis(id);
+    })
+    .catch(e => alert('加载失败: ' + e.message));
+}
+
+async function loadFullAnalysis(id) {
+  try {
+    const resp = await fetch('data/analyses/' + id + '.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const full = await resp.json();
+    // 渲染到 results 区域（复用 renderFromCloud 的逻辑）
+    // renderFromCloud 期望 data.sectors, data.results, data.ts, data.version
+    // full 记录有 sectors, results, createdAt, 但没有 ts/version
+    const cloudData = {
+      sectors: full.sectors || [],
+      results: full.results || [],
+      ts: full.createdAt || full.completedAt || new Date().toISOString(),
+      version: 'history-view',
+      excluded: full.excluded || []
+    };
+    renderFromCloud(cloudData);
+    switchTab('auto'); // 切回auto tab显示结果
+  } catch (e) {
+    alert('加载完整分析失败: ' + e.message);
+  }
+}
+
+function renderHistoryChart(records) {
+  const canvas = document.getElementById('history-chart');
+  if (!canvas) return;
+
+  // 销毁旧图表
+  if (historyChart) { historyChart.destroy(); historyChart = null; }
+
+  // 取最近10条，按时间正序
+  const sorted = [...records].reverse().slice(-10);
+  const labels = sorted.map(r => {
+    const d = new Date(r.createdAt || r.completedAt || '');
+    return (d.getMonth()+1) + '/' + d.getDate() + ' ' + d.getHours() + ':00';
+  });
+  const topScores = sorted.map(r => {
+    const r0 = (r.topResults || [])[0];
+    return r0 ? r0.totalScore : 0;
+  });
+
+  historyChart = new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: '冠军得分',
+        data: topScores,
+        borderColor: '#3b82f6',
+        backgroundColor: 'rgba(59,130,246,0.1)',
+        fill: true,
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, title: { display: true, text: '近期冠军得分趋势', color: '#8899b4', font: { size: 12 } } },
+      scales: {
+        x: { ticks: { color: '#8899b4', font: { size: 9 } }, grid: { color: 'rgba(30,45,66,0.5)' } },
+        y: { ticks: { color: '#8899b4', font: { size: 9 } }, grid: { color: 'rgba(30,45,66,0.5)' }, min: 40, max: 100 }
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>

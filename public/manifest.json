@@ -1,0 +1,110 @@
+{
+  "name": "市场猎手 - 智能选股",
+  "short_name": "市场猎手",
+  "description": "黑天鹅→供给缺口→隐形冠军 智能选股分析。识别供应链瓶颈，发现国产替代龙头。",
+  "start_url": "/standalone.html",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#080c14",
+  "theme_color": "#3b82f6",
+  "categories": ["finance", "utilities", "productivity"],
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "apple-touch-icon"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/home.png",
+      "sizes": "1080x2340",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "首页"
+    },
+    {
+      "src": "/screenshots/results.png",
+      "sizes": "1080x2340",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "分析结果"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "一键扫雷",
+      "short_name": "扫雷",
+      "description": "立即运行全流程分析",
+      "url": "/standalone.html#auto",
+      "icons": [{ "src": "/icons/shortcut-scan.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "输入消息",
+      "short_name": "输入",
+      "description": "手动输入供应链消息",
+      "url": "/standalone.html#manual",
+      "icons": [{ "src": "/icons/shortcut-input.png", "sizes": "96x96" }]
+    }
+  ]
+}

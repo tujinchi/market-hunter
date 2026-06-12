@@ -1,0 +1,58 @@
+{
+  "appId": "com.markethunter.app",
+  "appName": "市场猎手",
+  "webDir": "../public",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "https://a65c72634f914fa09ee79d3ad34e5885.app.codebuddy.work",
+    "cleartext": false
+  },
+  "backgroundColor": "#080c14",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "launchAutoHide": true,
+      "backgroundColor": "#080c14",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": true,
+      "spinnerColor": "#3b82f6"
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#080c14",
+      "overlaysWebView": false
+    },
+    "PushNotifications": {
+      "presentationOptions": ["badge", "sound", "alert"]
+    }
+  },
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": false,
+    "webContentsDebuggingEnabled": false,
+    "minSdkVersion": 24,
+    "targetSdkVersion": 34,
+    "buildOptions": {
+      "keystorePath": "",
+      "keystorePassword": "",
+      "keystoreAlias": "",
+      "keystoreAliasPassword": "",
+      "releaseType": "AAB"
+    },
+    "permissions": [
+      "android.permission.INTERNET",
+      "android.permission.ACCESS_NETWORK_STATE",
+      "android.permission.POST_NOTIFICATIONS"
+    ]
+  },
+  "ios": {
+    "contentInset": "automatic",
+    "scheme": "markethunter",
+    "preferredContentMode": "mobile",
+    "limitsNavigationsToAppBoundDomains": true,
+    "deploymentTarget": "15.0",
+    "privacyManifest": {
+      "NSPrivacyCollectedDataTypes": []
+    }
+  }
+}

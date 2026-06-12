@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>市场猎手 - 图标生成器</title>
+<style>
+  body{font-family:sans-serif;background:#080c14;color:#e8edf4;max-width:600px;margin:40px auto;padding:20px}
+  h1{text-align:center;background:linear-gradient(135deg,#60a5fa,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  canvas{display:block;margin:10px auto;border:1px solid #1e2d42;border-radius:8px}
+  .sizes{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:20px}
+  .size-card{background:#151c28;padding:10px;border-radius:8px;text-align:center;border:1px solid #1e2d42}
+  .size-card img{width:72px;height:72px;border-radius:12px}
+  .size-card .label{font-size:0.7rem;color:#8899b4;margin-top:6px}
+  button{display:block;margin:20px auto;padding:14px 32px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer}
+  button:hover{opacity:0.9;transform:translateY(-1px)}
+  .instruction{text-align:center;color:#8899b4;margin-top:12px;font-size:0.85rem}
+</style>
+</head>
+<body>
+<h1>🦅 市场猎手</h1>
+<p style="text-align:center;color:#8899b4;margin-bottom:20px">App 图标生成器 — 生成后右键保存到 icons/ 目录</p>
+
+<canvas id="canvas" width="512" height="512" style="width:256px;height:256px"></canvas>
+
+<div class="sizes" id="sizes"></div>
+<button onclick="downloadAll()">📦 一键下载全部尺寸</button>
+<p class="instruction">将生成的PNG文件放入 public/icons/ 目录</p>
+
+<script>
+const SIZES = [72, 96, 128, 144, 152, 180, 192, 384, 512];
+
+function drawIcon(size) {
+  const c = document.createElement('canvas');
+  c.width = size; c.height = size;
+  const ctx = c.getContext('2d');
+  const s = size / 512;
+
+  // Background
+  const bg = ctx.createLinearGradient(0, 0, size, size);
+  bg.addColorStop(0, '#080c14'); bg.addColorStop(1, '#0f1520');
+  ctx.beginPath(); ctx.roundRect(0, 0, size, size, size*0.1875); ctx.fillStyle = bg; ctx.fill();
+
+  // Border glow
+  ctx.beginPath(); ctx.roundRect(4*s, 4*s, size-8*s, size-8*s, size*0.172);
+  const accent = ctx.createLinearGradient(0, 0, size, 0);
+  accent.addColorStop(0, '#3b82f6'); accent.addColorStop(1, '#8b5cf6');
+  ctx.strokeStyle = accent; ctx.lineWidth = 4*s; ctx.globalAlpha = 0.4; ctx.stroke(); ctx.globalAlpha = 1;
+
+  // Eagle body
+  const cx = size/2, cy = size*0.35;
+  const grad = ctx.createLinearGradient(cx-80*s, cy, cx+80*s, cy);
+  grad.addColorStop(0, '#3b82f6'); grad.addColorStop(1, '#8b5cf6');
+  ctx.beginPath();
+  ctx.moveTo(cx-40*s, cy+160*s);
+  ctx.quadraticCurveTo(cx-60*s, cy+80*s, cx-30*s, cy);
+  ctx.lineTo(cx+30*s, cy);
+  ctx.quadraticCurveTo(cx+60*s, cy+80*s, cx+40*s, cy+160*s);
+  ctx.fillStyle = grad; ctx.globalAlpha = 0.9; ctx.fill(); ctx.globalAlpha = 1;
+
+  // Wings
+  ctx.beginPath();
+  ctx.moveTo(cx-30*s, cy+20*s);
+  ctx.quadraticCurveTo(cx-120*s, cy-100*s, cx-100*s, cy-60*s);
+  ctx.quadraticCurveTo(cx-80*s, cy-20*s, cx-30*s, cy+40*s);
+  ctx.strokeStyle = '#3b82f6'; ctx.lineWidth = 8*s; ctx.lineCap = 'round'; ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(cx+30*s, cy+20*s);
+  ctx.quadraticCurveTo(cx+120*s, cy-100*s, cx+100*s, cy-60*s);
+  ctx.quadraticCurveTo(cx+80*s, cy-20*s, cx+30*s, cy+40*s);
+  ctx.stroke();
+
+  // Head
+  ctx.beginPath(); ctx.arc(cx, cy-30*s, 25*s, 0, Math.PI*2);
+  ctx.fillStyle = grad; ctx.fill();
+
+  // Eyes
+  ctx.beginPath(); ctx.arc(cx-10*s, cy-40*s, 6*s, 0, Math.PI*2);
+  ctx.fillStyle = '#fff'; ctx.fill();
+  ctx.beginPath(); ctx.arc(cx+10*s, cy-40*s, 6*s, 0, Math.PI*2);
+  ctx.fill();
+  ctx.beginPath(); ctx.arc(cx-10*s, cy-40*s, 3*s, 0, Math.PI*2);
+  ctx.fillStyle = '#080c14'; ctx.fill();
+  ctx.beginPath(); ctx.arc(cx+10*s, cy-40*s, 3*s, 0, Math.PI*2);
+  ctx.fill();
+
+  // Beak
+  ctx.beginPath();
+  ctx.moveTo(cx-5*s, cy-20*s); ctx.lineTo(cx, cy-4*s); ctx.lineTo(cx+5*s, cy-20*s);
+  ctx.fillStyle = '#fbbf24'; ctx.fill();
+
+  // Radar
+  for(let r=60; r<=120; r+=30) {
+    ctx.beginPath(); ctx.arc(cx, cy+300*s, r*s, 0, Math.PI*2);
+    ctx.strokeStyle = '#3b82f6'; ctx.lineWidth = r===120?1*s:r===90?1.5*s:2*s;
+    ctx.globalAlpha = 0.15; ctx.stroke();
+  }
+  ctx.globalAlpha = 1;
+
+  // Text (only on larger icons)
+  if(size >= 180) {
+    const fs = size >= 384 ? 38*s : 24*s;
+    ctx.font = `900 ${fs}px sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.fillStyle = grad;
+    ctx.fillText('市场猎手', cx, cy+420*s);
+  }
+
+  return c;
+}
+
+function init() {
+  const c = drawIcon(512);
+  const main = document.getElementById('canvas');
+  main.getContext('2d').drawImage(c, 0, 0);
+
+  const sizesEl = document.getElementById('sizes');
+  for(const sz of SIZES) {
+    const cnv = drawIcon(sz);
+    const img = document.createElement('img');
+    img.src = cnv.toDataURL('image/png');
+    img.alt = `${sz}x${sz}`;
+    const card = document.createElement('div');
+    card.className = 'size-card';
+    card.appendChild(img);
+    const label = document.createElement('div');
+    label.className = 'label';
+    label.textContent = `${sz}×${sz}`;
+    card.appendChild(label);
+    sizesEl.appendChild(card);
+  }
+}
+
+function downloadAll() {
+  for(const sz of SIZES) {
+    const cnv = drawIcon(sz);
+    const a = document.createElement('a');
+    a.href = cnv.toDataURL('image/png');
+    a.download = `icon-${sz}.png`;
+    a.click();
+    // Small delay between downloads
+  }
+}
+
+init();
+</script>
+</body>
+</html>
