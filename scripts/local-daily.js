@@ -522,13 +522,17 @@ function outputJson(results, newsCount) {
 }
 
 // ============================================================
-// 主流程
+// 主流程（本地版：失败也发通知，不 exit）
 // ============================================================
 async function main() {
   const startTime = Date.now();
-  console.log('🦅 市场猎手 · 自动选股管线启动');
+  console.log('🦅 市场猎手 · 本地每日管线启动');
   console.log(`⏰ ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`);
   console.log('─'.repeat(50));
+
+  let outputJson = null;
+  let newsCount = 0, sectorCount = 0, resultCount = 0;
+  let errorMsg = null;
 
   try {
     // Phase 1: 新闻抓取
@@ -547,18 +551,38 @@ async function main() {
     const results = scoreAndRank(champions, quotes);
 
     // 输出
-    outputJson(results, news.length);
+    const jsonOut = outputJson(results, news.length);
+    newsCount = news.length;
+    sectorCount = rankedSectors.length;
+    resultCount = results.length;
 
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
     console.log(`\n✅ 管线执行完成，耗时 ${elapsed}s`);
     console.log(`📊 ${news.length} 条新闻 → ${rankedSectors.length} 个赛道 → ${results.length} 只标的`);
 
-    // 发送通知
-    await sendNotification(outputJson, news.length, rankedSectors.length, results.length);
   } catch (e) {
+    errorMsg = e.message;
     console.error(`\n❌ 管线异常: ${e.message}`);
     console.error(e.stack);
-    process.exit(1);
+  }
+
+  // 无论成功失败都发通知
+  if (errorMsg) {
+    await sendNotificationError(errorMsg);
+  } else {
+    await sendNotification(jsonOut, newsCount, sectorCount, resultCount);
+  }
+
+  // 尝试 git push（忽略失败）
+  try {
+    const { execSync } = require('child_process');
+    execSync('git add public/data/latest.json && git commit -m "🤖 本地每日更新" && git push', {
+      cwd: path.join(__dirname, '..'),
+      stdio: 'inherit'
+    });
+    console.log('✅ git push 完成');
+  } catch (e) {
+    console.warn('⚠️ git push 失败（可忽略）:', e.message);
   }
 }
 
@@ -619,6 +643,46 @@ ${keyword}`;
     } else {
       console.warn('⚠️ 钉钉通知失败:', j.errmsg);
     }
+  } catch (e) {
+    console.warn('⚠️ 钉钉通知异常:', e.message);
+  }
+}
+
+// ============================================================
+// 失败通知
+// ============================================================
+async function sendNotificationError(errorMsg) {
+  const webhook = process.env.DINGTALK_WEBHOOK;
+  if (!webhook) return;
+
+  const keyword = process.env.DINGTALK_KEYWORD || '市场猎手';
+  const now = new Date().toLocaleString('zh-CN', {timeZone:'Asia/Shanghai'});
+
+  const markdown = `## ❌ 市场猎手 · 每日管线异常
+
+📅 ${now}
+
+**错误信息：**
+\`\`\`
+${errorMsg}
+\`\`\`
+
+[🔗 查看日志](https://github.com/tujinchi/market-hunter/actions)
+
+${keyword}`;
+
+  try {
+    const res = await fetch(webhook, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        msgtype: 'markdown',
+        markdown: { title: keyword + ' · 管线异常', text: markdown }
+      })
+    });
+    const j = await res.json();
+    if (j.errcode === 0) console.log('📲 钉钉异常通知已发送');
+    else console.warn('⚠️ 钉钉通知失败:', j.errmsg);
   } catch (e) {
     console.warn('⚠️ 钉钉通知异常:', e.message);
   }

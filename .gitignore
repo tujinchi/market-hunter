@@ -33,3 +33,7 @@ data/users.json
 temp-*.js
 test-*.js
 *.tmp
+
+# Local run config (contains secrets)
+run-daily.bat
+.env
