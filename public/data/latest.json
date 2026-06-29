@@ -1,45 +1,20 @@
 {
-  "ts": "2026-06-26T11:28:26.712Z",
-  "date": "2026/6/26",
-  "time": "19:28:26",
+  "ts": "2026-06-29T14:52:37.700Z",
+  "date": "2026/6/29",
+  "time": "22:52:37",
   "pipeline": "v2.0-auto",
   "mode": "scheduled",
   "freshness": "latest",
   "dataSource": "新浪财经 + 东方财富",
   "summary": {
-    "totalNews": 59,
+    "totalNews": 60,
     "sectorsCovered": 5,
     "stocksSelected": 10,
-    "avgScore": 86
+    "avgScore": 87
   },
   "results": [
     {
       "rank": 1,
-      "code": "601958",
-      "name": "金钼股份",
-      "sector": "钼金属（半导体级）",
-      "title": "亚洲最大钼矿",
-      "share": "国内钼资源绝对龙头",
-      "trigger": "SK海力士375层NAND用钼替代钨",
-      "gapProduct": "半导体级钼",
-      "duration": "矿开3-5年",
-      "severity": "high",
-      "score": 97,
-      "scoreBreakdown": {
-        "base": 90,
-        "news": 0,
-        "quote": 5,
-        "trend": 2
-      },
-      "price": 27.13,
-      "change": 0.82,
-      "volume": 130981123,
-      "quoteTime": "2026-06-26 15:00:01",
-      "newsCount": 0,
-      "newsSamples": []
-    },
-    {
-      "rank": 2,
       "code": "603993",
       "name": "洛阳钼业",
       "sector": "钼金属（半导体级）",
@@ -49,22 +24,22 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 90,
+      "score": 93,
       "scoreBreakdown": {
         "base": 86,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 17.24,
-      "change": -4.59,
-      "volume": 336797495,
-      "quoteTime": "2026-06-26 15:00:01",
+      "price": 18,
+      "change": 4.41,
+      "volume": 312224064,
+      "quoteTime": "2026-06-29 15:00:01",
       "newsCount": 0,
       "newsSamples": []
     },
     {
-      "rank": 3,
+      "rank": 2,
       "code": "300408",
       "name": "三环集团",
       "sector": "MLCC 被动元器件",
@@ -74,17 +49,42 @@
       "gapProduct": "高容MLCC",
       "duration": "结构性长期",
       "severity": "high",
-      "score": 90,
+      "score": 93,
       "scoreBreakdown": {
         "base": 86,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 160.05,
-      "change": -2.18,
-      "volume": 74815676,
-      "quoteTime": "2026-06-26 15:35:30",
+      "price": 166.69,
+      "change": 4.15,
+      "volume": 91429237,
+      "quoteTime": "2026-06-29 15:35:30",
+      "newsCount": 0,
+      "newsSamples": []
+    },
+    {
+      "rank": 3,
+      "code": "601958",
+      "name": "金钼股份",
+      "sector": "钼金属（半导体级）",
+      "title": "亚洲最大钼矿",
+      "share": "国内钼资源绝对龙头",
+      "trigger": "SK海力士375层NAND用钼替代钨",
+      "gapProduct": "半导体级钼",
+      "duration": "矿开3-5年",
+      "severity": "high",
+      "score": 92,
+      "scoreBreakdown": {
+        "base": 90,
+        "news": 0,
+        "quote": 5,
+        "trend": -3
+      },
+      "price": 29.55,
+      "change": 8.92,
+      "volume": 169239041,
+      "quoteTime": "2026-06-29 15:00:03",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -106,10 +106,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 501.05,
-      "change": 4.32,
-      "volume": 46471099,
-      "quoteTime": "2026-06-26 15:34:59",
+      "price": 507,
+      "change": 1.19,
+      "volume": 39893907,
+      "quoteTime": "2026-06-29 15:34:59",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -131,10 +131,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 178.5,
-      "change": -4.65,
-      "volume": 71476966,
-      "quoteTime": "2026-06-26 15:00:00",
+      "price": 171.16,
+      "change": -4.11,
+      "volume": 74837544,
+      "quoteTime": "2026-06-29 15:00:01",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -156,15 +156,40 @@
         "quote": 5,
         "trend": -5
       },
-      "price": 66.71,
-      "change": -8.57,
-      "volume": 69751877,
-      "quoteTime": "2026-06-26 15:00:03",
+      "price": 62.69,
+      "change": -6.03,
+      "volume": 63140216,
+      "quoteTime": "2026-06-29 15:00:01",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 7,
+      "code": "002916",
+      "name": "深南电路",
+      "sector": "PPE树脂→CCL→PCB",
+      "title": "AI服务器PCB龙头",
+      "share": "高多层PCB国内领先",
+      "trigger": "沙特朱拜勒停产(全球70%PPE供应)",
+      "gapProduct": "PPE树脂/高端覆铜板",
+      "duration": "至少至2027",
+      "severity": "critical",
+      "score": 85,
+      "scoreBreakdown": {
+        "base": 78,
+        "news": 0,
+        "quote": 5,
+        "trend": 2
+      },
+      "price": 434.16,
+      "change": 0.15,
+      "volume": 12901107,
+      "quoteTime": "2026-06-29 15:00:00",
+      "newsCount": 0,
+      "newsSamples": []
+    },
+    {
+      "rank": 8,
       "code": "605090",
       "name": "九丰能源",
       "sector": "氦气",
@@ -181,35 +206,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 35.04,
-      "change": 2.67,
-      "volume": 20418042,
-      "quoteTime": "2026-06-26 15:00:03",
-      "newsCount": 0,
-      "newsSamples": []
-    },
-    {
-      "rank": 8,
-      "code": "002916",
-      "name": "深南电路",
-      "sector": "PPE树脂→CCL→PCB",
-      "title": "AI服务器PCB龙头",
-      "share": "高多层PCB国内领先",
-      "trigger": "沙特朱拜勒停产(全球70%PPE供应)",
-      "gapProduct": "PPE树脂/高端覆铜板",
-      "duration": "至少至2027",
-      "severity": "critical",
-      "score": 82,
-      "scoreBreakdown": {
-        "base": 78,
-        "news": 0,
-        "quote": 5,
-        "trend": -1
-      },
-      "price": 433.5,
-      "change": -4.73,
-      "volume": 11199944,
-      "quoteTime": "2026-06-26 15:00:00",
+      "price": 36.13,
+      "change": 3.11,
+      "volume": 17419825,
+      "quoteTime": "2026-06-29 15:00:03",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -224,17 +224,17 @@
       "gapProduct": "高容MLCC",
       "duration": "结构性长期",
       "severity": "high",
-      "score": 76,
+      "score": 79,
       "scoreBreakdown": {
         "base": 72,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 78.5,
-      "change": -1.41,
-      "volume": 141985662,
-      "quoteTime": "2026-06-26 15:00:00",
+      "price": 80.27,
+      "change": 2.25,
+      "volume": 146520535,
+      "quoteTime": "2026-06-29 15:00:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -249,17 +249,17 @@
       "gapProduct": "存储模组/DRAM/NAND",
       "duration": "至2028",
       "severity": "critical",
-      "score": 76,
+      "score": 78,
       "scoreBreakdown": {
         "base": 76,
         "news": 0,
         "quote": 5,
-        "trend": -5
+        "trend": -3
       },
-      "price": 261.82,
-      "change": -6.21,
-      "volume": 75500192,
-      "quoteTime": "2026-06-26 15:34:59",
+      "price": 296.06,
+      "change": 13.08,
+      "volume": 106726292,
+      "quoteTime": "2026-06-29 15:34:59",
       "newsCount": 0,
       "newsSamples": []
     }
