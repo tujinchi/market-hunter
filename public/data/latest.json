@@ -1,7 +1,7 @@
 {
-  "ts": "2026-08-05T03:41:13.546Z",
-  "date": "2026/8/5",
-  "time": "11:41:13",
+  "ts": "2026-08-06T03:47:00.348Z",
+  "date": "2026/8/6",
+  "time": "11:47:00",
   "pipeline": "v2.0-auto",
   "mode": "scheduled",
   "freshness": "latest",
@@ -10,7 +10,7 @@
     "totalNews": 60,
     "sectorsCovered": 5,
     "stocksSelected": 10,
-    "avgScore": 85
+    "avgScore": 87
   },
   "results": [
     {
@@ -24,17 +24,17 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 97,
+      "score": 95,
       "scoreBreakdown": {
         "base": 90,
         "news": 0,
         "quote": 5,
-        "trend": 2
+        "trend": 0
       },
-      "price": 22.98,
-      "change": 4.69,
-      "volume": 44027692,
-      "quoteTime": "2026-08-05 11:30:00",
+      "price": 22.62,
+      "change": null,
+      "volume": 48985442,
+      "quoteTime": "2026-08-06 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -49,47 +49,22 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 88,
+      "score": 93,
       "scoreBreakdown": {
         "base": 86,
         "news": 0,
         "quote": 5,
-        "trend": -3
+        "trend": 2
       },
-      "price": 20.2,
-      "change": 5.26,
-      "volume": 236687845,
-      "quoteTime": "2026-08-05 11:30:00",
+      "price": 20.63,
+      "change": 0.78,
+      "volume": 234161266,
+      "quoteTime": "2026-08-06 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 3,
-      "code": "300408",
-      "name": "三环集团",
-      "sector": "MLCC 被动元器件",
-      "title": "国产MLCC全球份额第一",
-      "share": "全球2.5%/粉体100%自给",
-      "trigger": "AI服务器MLCC用量8-12倍，高容涨50-60%",
-      "gapProduct": "高容MLCC",
-      "duration": "结构性长期",
-      "severity": "high",
-      "score": 88,
-      "scoreBreakdown": {
-        "base": 86,
-        "news": 0,
-        "quote": 5,
-        "trend": -3
-      },
-      "price": 129.99,
-      "change": 7.45,
-      "volume": 52229813,
-      "quoteTime": "2026-08-05 11:30:00",
-      "newsCount": 0,
-      "newsSamples": []
-    },
-    {
-      "rank": 4,
       "code": "605589",
       "name": "圣泉集团",
       "sector": "PPE树脂→CCL→PCB",
@@ -99,17 +74,42 @@
       "gapProduct": "PPE树脂/高端覆铜板",
       "duration": "至少至2027",
       "severity": "critical",
-      "score": 88,
+      "score": 93,
       "scoreBreakdown": {
         "base": 86,
         "news": 0,
         "quote": 5,
-        "trend": -3
+        "trend": 2
       },
-      "price": 38.28,
-      "change": 5.72,
-      "volume": 33919180,
-      "quoteTime": "2026-08-05 11:30:00",
+      "price": 39.37,
+      "change": 1.18,
+      "volume": 34458874,
+      "quoteTime": "2026-08-06 11:30:00",
+      "newsCount": 0,
+      "newsSamples": []
+    },
+    {
+      "rank": 4,
+      "code": "300408",
+      "name": "三环集团",
+      "sector": "MLCC 被动元器件",
+      "title": "国产MLCC全球份额第一",
+      "share": "全球2.5%/粉体100%自给",
+      "trigger": "AI服务器MLCC用量8-12倍，高容涨50-60%",
+      "gapProduct": "高容MLCC",
+      "duration": "结构性长期",
+      "severity": "high",
+      "score": 90,
+      "scoreBreakdown": {
+        "base": 86,
+        "news": 0,
+        "quote": 5,
+        "trend": -1
+      },
+      "price": 124.15,
+      "change": -3.15,
+      "volume": 52616940,
+      "quoteTime": "2026-08-06 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -124,22 +124,47 @@
       "gapProduct": "PPE树脂/高端覆铜板",
       "duration": "至少至2027",
       "severity": "critical",
-      "score": 85,
+      "score": 90,
       "scoreBreakdown": {
         "base": 83,
         "news": 0,
         "quote": 5,
-        "trend": -3
+        "trend": 2
       },
-      "price": 122.22,
-      "change": 8.9,
-      "volume": 60472750,
-      "quoteTime": "2026-08-05 11:30:00",
+      "price": 126.51,
+      "change": 3.03,
+      "volume": 57817108,
+      "quoteTime": "2026-08-06 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 6,
+      "code": "688525",
+      "name": "佰维存储",
+      "sector": "存储芯片",
+      "title": "存储解决方案龙头",
+      "share": "18.6亿美元长单锁至2028",
+      "trigger": "CSP锁死2027-2028全部DRAM/NAND产能",
+      "gapProduct": "存储模组/DRAM/NAND",
+      "duration": "至2028",
+      "severity": "critical",
+      "score": 86,
+      "scoreBreakdown": {
+        "base": 82,
+        "news": 0,
+        "quote": 5,
+        "trend": -1
+      },
+      "price": 229.99,
+      "change": -1.32,
+      "volume": 28054010,
+      "quoteTime": "2026-08-06 11:30:00",
+      "newsCount": 0,
+      "newsSamples": []
+    },
+    {
+      "rank": 7,
       "code": "002916",
       "name": "深南电路",
       "sector": "PPE树脂→CCL→PCB",
@@ -156,15 +181,15 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 345.32,
-      "change": 3.84,
-      "volume": 9461057,
-      "quoteTime": "2026-08-05 11:30:00",
+      "price": 353.3,
+      "change": 1.18,
+      "volume": 8312525,
+      "quoteTime": "2026-08-06 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
     {
-      "rank": 7,
+      "rank": 8,
       "code": "605090",
       "name": "九丰能源",
       "sector": "氦气",
@@ -181,35 +206,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 33.59,
-      "change": 2.69,
-      "volume": 8836543,
-      "quoteTime": "2026-08-05 11:30:00",
-      "newsCount": 0,
-      "newsSamples": []
-    },
-    {
-      "rank": 8,
-      "code": "688525",
-      "name": "佰维存储",
-      "sector": "存储芯片",
-      "title": "存储解决方案龙头",
-      "share": "18.6亿美元长单锁至2028",
-      "trigger": "CSP锁死2027-2028全部DRAM/NAND产能",
-      "gapProduct": "存储模组/DRAM/NAND",
-      "duration": "至2028",
-      "severity": "critical",
-      "score": 84,
-      "scoreBreakdown": {
-        "base": 82,
-        "news": 0,
-        "quote": 5,
-        "trend": -3
-      },
-      "price": 232.7,
-      "change": 6.97,
-      "volume": 26197469,
-      "quoteTime": "2026-08-05 11:30:00",
+      "price": 33.72,
+      "change": 0.48,
+      "volume": 9142260,
+      "quoteTime": "2026-08-06 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -224,17 +224,17 @@
       "gapProduct": "存储模组/DRAM/NAND",
       "duration": "至2028",
       "severity": "critical",
-      "score": 78,
+      "score": 80,
       "scoreBreakdown": {
         "base": 76,
         "news": 0,
         "quote": 5,
-        "trend": -3
+        "trend": -1
       },
-      "price": 213.5,
-      "change": 5.04,
-      "volume": 36211253,
-      "quoteTime": "2026-08-05 11:30:00",
+      "price": 207.35,
+      "change": -2.19,
+      "volume": 34847593,
+      "quoteTime": "2026-08-06 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -249,17 +249,17 @@
       "gapProduct": "高容MLCC",
       "duration": "结构性长期",
       "severity": "high",
-      "score": 74,
+      "score": 76,
       "scoreBreakdown": {
         "base": 72,
         "news": 0,
         "quote": 5,
-        "trend": -3
+        "trend": -1
       },
-      "price": 58.5,
-      "change": 7.68,
-      "volume": 141456417,
-      "quoteTime": "2026-08-05 11:30:00",
+      "price": 56.9,
+      "change": -1.56,
+      "volume": 141913973,
+      "quoteTime": "2026-08-06 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     }
