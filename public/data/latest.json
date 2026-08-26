@@ -1,7 +1,7 @@
 {
-  "ts": "2026-08-25T01:57:05.267Z",
-  "date": "2026/8/25",
-  "time": "09:57:05",
+  "ts": "2026-08-26T02:05:19.879Z",
+  "date": "2026/8/26",
+  "time": "10:05:19",
   "pipeline": "v2.0-auto",
   "mode": "scheduled",
   "freshness": "latest",
@@ -10,7 +10,7 @@
     "totalNews": 60,
     "sectorsCovered": 5,
     "stocksSelected": 10,
-    "avgScore": 87
+    "avgScore": 86
   },
   "results": [
     {
@@ -24,17 +24,17 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 94,
+      "score": 97,
       "scoreBreakdown": {
         "base": 90,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 22.59,
-      "change": -3.01,
-      "volume": 32434352,
-      "quoteTime": "2026-08-25 09:57:01",
+      "price": 22.51,
+      "change": 1.99,
+      "volume": 25292317,
+      "quoteTime": "2026-08-26 10:05:18",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -49,17 +49,17 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 90,
+      "score": 93,
       "scoreBreakdown": {
         "base": 86,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 18.45,
-      "change": -2.84,
-      "volume": 69620886,
-      "quoteTime": "2026-08-25 09:57:01",
+      "price": 19.31,
+      "change": 4.83,
+      "volume": 146048711,
+      "quoteTime": "2026-08-26 10:05:17",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -81,10 +81,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 107.16,
-      "change": -1.63,
-      "volume": 12485335,
-      "quoteTime": "2026-08-25 09:57:00",
+      "price": 107.04,
+      "change": -1.89,
+      "volume": 8193627,
+      "quoteTime": "2026-08-26 10:05:15",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -106,10 +106,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 36.76,
-      "change": -2.03,
-      "volume": 7813045,
-      "quoteTime": "2026-08-25 09:57:02",
+      "price": 36.87,
+      "change": -1.18,
+      "volume": 5872300,
+      "quoteTime": "2026-08-26 10:05:17",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -124,17 +124,17 @@
       "gapProduct": "PPE树脂/高端覆铜板",
       "duration": "至少至2027",
       "severity": "critical",
-      "score": 90,
+      "score": 87,
       "scoreBreakdown": {
         "base": 83,
         "news": 0,
         "quote": 5,
-        "trend": 2
+        "trend": -1
       },
-      "price": 129.3,
-      "change": 2.38,
-      "volume": 18255729,
-      "quoteTime": "2026-08-25 09:57:02",
+      "price": 125.06,
+      "change": -3.05,
+      "volume": 21911293,
+      "quoteTime": "2026-08-26 10:05:16",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -156,40 +156,15 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 224.12,
-      "change": -0.65,
-      "volume": 4732216,
-      "quoteTime": "2026-08-25 09:57:01",
+      "price": 222.89,
+      "change": -2.16,
+      "volume": 5108157,
+      "quoteTime": "2026-08-26 10:05:15",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 7,
-      "code": "605090",
-      "name": "九丰能源",
-      "sector": "氦气",
-      "title": "国产提氦稀缺标的",
-      "share": "BOG提氦150万方/年",
-      "trigger": "卡塔尔+俄罗斯双断供(占中国进口98.6%)",
-      "gapProduct": "高纯氦气",
-      "duration": "至2027底",
-      "severity": "critical",
-      "score": 85,
-      "scoreBreakdown": {
-        "base": 78,
-        "news": 0,
-        "quote": 5,
-        "trend": 2
-      },
-      "price": 35.21,
-      "change": 1.7,
-      "volume": 3405000,
-      "quoteTime": "2026-08-25 09:57:01",
-      "newsCount": 0,
-      "newsSamples": []
-    },
-    {
-      "rank": 8,
       "code": "002916",
       "name": "深南电路",
       "sector": "PPE树脂→CCL→PCB",
@@ -206,10 +181,35 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 341.26,
-      "change": -0.69,
-      "volume": 1621700,
-      "quoteTime": "2026-08-25 09:57:03",
+      "price": 338.9,
+      "change": -0.62,
+      "volume": 1876960,
+      "quoteTime": "2026-08-26 10:05:15",
+      "newsCount": 0,
+      "newsSamples": []
+    },
+    {
+      "rank": 8,
+      "code": "605090",
+      "name": "九丰能源",
+      "sector": "氦气",
+      "title": "国产提氦稀缺标的",
+      "share": "BOG提氦150万方/年",
+      "trigger": "卡塔尔+俄罗斯双断供(占中国进口98.6%)",
+      "gapProduct": "高纯氦气",
+      "duration": "至2027底",
+      "severity": "critical",
+      "score": 82,
+      "scoreBreakdown": {
+        "base": 78,
+        "news": 0,
+        "quote": 5,
+        "trend": -1
+      },
+      "price": 34.53,
+      "change": -1.71,
+      "volume": 2145800,
+      "quoteTime": "2026-08-26 10:05:16",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -231,35 +231,35 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 190.84,
-      "change": -0.52,
-      "volume": 6861812,
-      "quoteTime": "2026-08-25 09:57:02",
+      "price": 192.06,
+      "change": -1.21,
+      "volume": 6491067,
+      "quoteTime": "2026-08-26 10:05:18",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 10,
-      "code": "603986",
-      "name": "兆易创新",
-      "sector": "存储芯片",
-      "title": "NOR Flash国内第一",
-      "share": "全球前五/国内第一",
-      "trigger": "CSP锁死2027-2028全部DRAM/NAND产能",
-      "gapProduct": "存储模组/DRAM/NAND",
-      "duration": "至2028",
-      "severity": "critical",
-      "score": 79,
+      "code": "000636",
+      "name": "风华高科",
+      "sector": "MLCC 被动元器件",
+      "title": "国内MLCC产能第一",
+      "share": "月产能635亿只",
+      "trigger": "AI服务器MLCC用量8-12倍，高容涨50-60%",
+      "gapProduct": "高容MLCC",
+      "duration": "结构性长期",
+      "severity": "high",
+      "score": 76,
       "scoreBreakdown": {
         "base": 72,
         "news": 0,
         "quote": 5,
-        "trend": 2
+        "trend": -1
       },
-      "price": 383.77,
-      "change": 0.55,
-      "volume": 12037845,
-      "quoteTime": "2026-08-25 09:57:01",
+      "price": 50.38,
+      "change": -1.85,
+      "volume": 20933398,
+      "quoteTime": "2026-08-26 10:05:18",
       "newsCount": 0,
       "newsSamples": []
     }
