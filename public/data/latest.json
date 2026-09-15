@@ -1,7 +1,7 @@
 {
-  "ts": "2026-09-14T05:10:36.302Z",
-  "date": "2026/9/14",
-  "time": "13:10:36",
+  "ts": "2026-09-15T05:04:04.214Z",
+  "date": "2026/9/15",
+  "time": "13:04:04",
   "pipeline": "v2.0-auto",
   "mode": "scheduled",
   "freshness": "latest",
@@ -10,7 +10,7 @@
     "totalNews": 60,
     "sectorsCovered": 5,
     "stocksSelected": 10,
-    "avgScore": 87
+    "avgScore": 88
   },
   "results": [
     {
@@ -24,17 +24,17 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 95,
+      "score": 97,
       "scoreBreakdown": {
         "base": 90,
         "news": 0,
         "quote": 5,
-        "trend": 0
+        "trend": 2
       },
-      "price": 20.26,
-      "change": null,
-      "volume": 9716348,
-      "quoteTime": "2026-09-14 13:10:34",
+      "price": 20.35,
+      "change": 0.94,
+      "volume": 13675751,
+      "quoteTime": "2026-09-15 13:04:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -56,10 +56,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 126.78,
-      "change": 1.95,
-      "volume": 60396421,
-      "quoteTime": "2026-09-14 13:10:33",
+      "price": 126.27,
+      "change": 0.35,
+      "volume": 33991304,
+      "quoteTime": "2026-09-15 13:04:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -81,10 +81,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 38.93,
-      "change": 2.29,
-      "volume": 19026776,
-      "quoteTime": "2026-09-14 13:10:33",
+      "price": 39.65,
+      "change": 1.56,
+      "volume": 23853177,
+      "quoteTime": "2026-09-15 13:03:59",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -106,10 +106,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 17.79,
-      "change": -1.98,
-      "volume": 81937628,
-      "quoteTime": "2026-09-14 13:10:33",
+      "price": 17.69,
+      "change": -1.12,
+      "volume": 67225395,
+      "quoteTime": "2026-09-15 13:04:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -124,17 +124,17 @@
       "gapProduct": "PPE树脂/高端覆铜板",
       "duration": "至少至2027",
       "severity": "critical",
-      "score": 87,
+      "score": 90,
       "scoreBreakdown": {
         "base": 83,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 146.88,
-      "change": -1.04,
-      "volume": 39049851,
-      "quoteTime": "2026-09-14 13:10:32",
+      "price": 151.62,
+      "change": 3.85,
+      "volume": 63311023,
+      "quoteTime": "2026-09-15 13:04:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -149,17 +149,17 @@
       "gapProduct": "存储模组/DRAM/NAND",
       "duration": "至2028",
       "severity": "critical",
-      "score": 86,
+      "score": 89,
       "scoreBreakdown": {
         "base": 82,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 208.18,
-      "change": -2.26,
-      "volume": 6951830,
-      "quoteTime": "2026-09-14 13:10:32",
+      "price": 207.5,
+      "change": 0.19,
+      "volume": 8133760,
+      "quoteTime": "2026-09-15 13:04:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -174,17 +174,17 @@
       "gapProduct": "PPE树脂/高端覆铜板",
       "duration": "至少至2027",
       "severity": "critical",
-      "score": 82,
+      "score": 85,
       "scoreBreakdown": {
         "base": 78,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 389,
-      "change": -1.94,
-      "volume": 5000929,
-      "quoteTime": "2026-09-14 13:10:33",
+      "price": 391.82,
+      "change": 0.69,
+      "volume": 5152190,
+      "quoteTime": "2026-09-15 13:04:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -199,17 +199,17 @@
       "gapProduct": "高纯氦气",
       "duration": "至2027底",
       "severity": "critical",
-      "score": 82,
+      "score": 85,
       "scoreBreakdown": {
         "base": 78,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 32.66,
-      "change": -0.52,
-      "volume": 3874100,
-      "quoteTime": "2026-09-14 13:10:32",
+      "price": 32.79,
+      "change": 0.34,
+      "volume": 2512100,
+      "quoteTime": "2026-09-15 13:04:01",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -224,31 +224,31 @@
       "gapProduct": "存储模组/DRAM/NAND",
       "duration": "至2028",
       "severity": "critical",
-      "score": 80,
+      "score": 83,
       "scoreBreakdown": {
         "base": 76,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 185.41,
-      "change": -3.41,
-      "volume": 14179233,
-      "quoteTime": "2026-09-14 13:10:31",
+      "price": 188.45,
+      "change": 2.06,
+      "volume": 18162876,
+      "quoteTime": "2026-09-15 13:04:00",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 10,
-      "code": "000636",
-      "name": "风华高科",
-      "sector": "MLCC 被动元器件",
-      "title": "国内MLCC产能第一",
-      "share": "月产能635亿只",
-      "trigger": "AI服务器MLCC用量8-12倍，高容涨50-60%",
-      "gapProduct": "高容MLCC",
-      "duration": "结构性长期",
-      "severity": "high",
+      "code": "603986",
+      "name": "兆易创新",
+      "sector": "存储芯片",
+      "title": "NOR Flash国内第一",
+      "share": "全球前五/国内第一",
+      "trigger": "CSP锁死2027-2028全部DRAM/NAND产能",
+      "gapProduct": "存储模组/DRAM/NAND",
+      "duration": "至2028",
+      "severity": "critical",
       "score": 79,
       "scoreBreakdown": {
         "base": 72,
@@ -256,10 +256,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 58.7,
-      "change": 4.84,
-      "volume": 178265118,
-      "quoteTime": "2026-09-14 13:10:33",
+      "price": 365.76,
+      "change": 2.49,
+      "volume": 21542932,
+      "quoteTime": "2026-09-15 13:04:00",
       "newsCount": 0,
       "newsSamples": []
     }
