@@ -1,7 +1,7 @@
 {
-  "ts": "2026-09-15T05:04:04.214Z",
-  "date": "2026/9/15",
-  "time": "13:04:04",
+  "ts": "2026-09-16T04:59:58.234Z",
+  "date": "2026/9/16",
+  "time": "12:59:58",
   "pipeline": "v2.0-auto",
   "mode": "scheduled",
   "freshness": "latest",
@@ -10,7 +10,7 @@
     "totalNews": 60,
     "sectorsCovered": 5,
     "stocksSelected": 10,
-    "avgScore": 88
+    "avgScore": 89
   },
   "results": [
     {
@@ -31,15 +31,40 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 20.35,
-      "change": 0.94,
-      "volume": 13675751,
-      "quoteTime": "2026-09-15 13:04:00",
+      "price": 20.49,
+      "change": 1.24,
+      "volume": 13805636,
+      "quoteTime": "2026-09-16 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 2,
+      "code": "603993",
+      "name": "洛阳钼业",
+      "sector": "钼金属（半导体级）",
+      "title": "全球前五钼生产商",
+      "share": "多金属矿巨头",
+      "trigger": "SK海力士375层NAND用钼替代钨",
+      "gapProduct": "半导体级钼",
+      "duration": "矿开3-5年",
+      "severity": "high",
+      "score": 93,
+      "scoreBreakdown": {
+        "base": 86,
+        "news": 0,
+        "quote": 5,
+        "trend": 2
+      },
+      "price": 17.87,
+      "change": 1.3,
+      "volume": 83878717,
+      "quoteTime": "2026-09-16 11:30:00",
+      "newsCount": 0,
+      "newsSamples": []
+    },
+    {
+      "rank": 3,
       "code": "300408",
       "name": "三环集团",
       "sector": "MLCC 被动元器件",
@@ -56,15 +81,15 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 126.27,
-      "change": 0.35,
-      "volume": 33991304,
-      "quoteTime": "2026-09-15 13:04:00",
+      "price": 130.9,
+      "change": 3.72,
+      "volume": 29884967,
+      "quoteTime": "2026-09-16 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
     {
-      "rank": 3,
+      "rank": 4,
       "code": "605589",
       "name": "圣泉集团",
       "sector": "PPE树脂→CCL→PCB",
@@ -81,35 +106,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 39.65,
-      "change": 1.56,
-      "volume": 23853177,
-      "quoteTime": "2026-09-15 13:03:59",
-      "newsCount": 0,
-      "newsSamples": []
-    },
-    {
-      "rank": 4,
-      "code": "603993",
-      "name": "洛阳钼业",
-      "sector": "钼金属（半导体级）",
-      "title": "全球前五钼生产商",
-      "share": "多金属矿巨头",
-      "trigger": "SK海力士375层NAND用钼替代钨",
-      "gapProduct": "半导体级钼",
-      "duration": "矿开3-5年",
-      "severity": "high",
-      "score": 90,
-      "scoreBreakdown": {
-        "base": 86,
-        "news": 0,
-        "quote": 5,
-        "trend": -1
-      },
-      "price": 17.69,
-      "change": -1.12,
-      "volume": 67225395,
-      "quoteTime": "2026-09-15 13:04:00",
+      "price": 41.2,
+      "change": 4.04,
+      "volume": 31987631,
+      "quoteTime": "2026-09-16 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -131,10 +131,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 151.62,
-      "change": 3.85,
-      "volume": 63311023,
-      "quoteTime": "2026-09-15 13:04:00",
+      "price": 157.16,
+      "change": 4.6,
+      "volume": 41384902,
+      "quoteTime": "2026-09-16 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -156,10 +156,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 207.5,
-      "change": 0.19,
-      "volume": 8133760,
-      "quoteTime": "2026-09-15 13:04:00",
+      "price": 214.2,
+      "change": 3.98,
+      "volume": 9576287,
+      "quoteTime": "2026-09-16 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -181,10 +181,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 391.82,
-      "change": 0.69,
-      "volume": 5152190,
-      "quoteTime": "2026-09-15 13:04:00",
+      "price": 399.9,
+      "change": 2.61,
+      "volume": 4699583,
+      "quoteTime": "2026-09-16 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -206,10 +206,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 32.79,
-      "change": 0.34,
-      "volume": 2512100,
-      "quoteTime": "2026-09-15 13:04:01",
+      "price": 32.77,
+      "change": 0.46,
+      "volume": 2779007,
+      "quoteTime": "2026-09-16 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -231,24 +231,24 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 188.45,
-      "change": 2.06,
-      "volume": 18162876,
-      "quoteTime": "2026-09-15 13:04:00",
+      "price": 195.88,
+      "change": 4.29,
+      "volume": 15915852,
+      "quoteTime": "2026-09-16 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 10,
-      "code": "603986",
-      "name": "兆易创新",
-      "sector": "存储芯片",
-      "title": "NOR Flash国内第一",
-      "share": "全球前五/国内第一",
-      "trigger": "CSP锁死2027-2028全部DRAM/NAND产能",
-      "gapProduct": "存储模组/DRAM/NAND",
-      "duration": "至2028",
-      "severity": "critical",
+      "code": "000636",
+      "name": "风华高科",
+      "sector": "MLCC 被动元器件",
+      "title": "国内MLCC产能第一",
+      "share": "月产能635亿只",
+      "trigger": "AI服务器MLCC用量8-12倍，高容涨50-60%",
+      "gapProduct": "高容MLCC",
+      "duration": "结构性长期",
+      "severity": "high",
       "score": 79,
       "scoreBreakdown": {
         "base": 72,
@@ -256,10 +256,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 365.76,
-      "change": 2.49,
-      "volume": 21542932,
-      "quoteTime": "2026-09-15 13:04:00",
+      "price": 59.2,
+      "change": 2.94,
+      "volume": 96308029,
+      "quoteTime": "2026-09-16 11:30:00",
       "newsCount": 0,
       "newsSamples": []
     }
