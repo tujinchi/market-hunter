@@ -1,7 +1,7 @@
 {
-  "ts": "2026-09-24T05:05:13.391Z",
-  "date": "2026/9/24",
-  "time": "13:05:13",
+  "ts": "2026-09-25T05:07:43.428Z",
+  "date": "2026/9/25",
+  "time": "13:07:43",
   "pipeline": "v2.0-auto",
   "mode": "scheduled",
   "freshness": "latest",
@@ -10,7 +10,7 @@
     "totalNews": 60,
     "sectorsCovered": 5,
     "stocksSelected": 10,
-    "avgScore": 82
+    "avgScore": 85
   },
   "results": [
     {
@@ -24,17 +24,17 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 90,
+      "score": 94,
       "scoreBreakdown": {
         "base": 90,
         "news": 0,
-        "quote": 0,
-        "trend": 0
+        "quote": 5,
+        "trend": -1
       },
-      "price": null,
-      "change": null,
-      "volume": null,
-      "quoteTime": null,
+      "price": 19.7,
+      "change": -4.83,
+      "volume": 34112880,
+      "quoteTime": "2026-09-24 15:34:59",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -49,22 +49,72 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 86,
+      "score": 90,
       "scoreBreakdown": {
         "base": 86,
         "news": 0,
-        "quote": 0,
-        "trend": 0
+        "quote": 5,
+        "trend": -1
       },
-      "price": null,
-      "change": null,
-      "volume": null,
-      "quoteTime": null,
+      "price": 17.08,
+      "change": -3.28,
+      "volume": 150553166,
+      "quoteTime": "2026-09-24 15:34:59",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 3,
+      "code": "605589",
+      "name": "圣泉集团",
+      "sector": "PPE树脂→CCL→PCB",
+      "title": "PPE树脂国产唯一认证",
+      "share": "国内头部CCL企业唯一供应商",
+      "trigger": "沙特朱拜勒停产(全球70%PPE供应)",
+      "gapProduct": "PPE树脂/高端覆铜板",
+      "duration": "至少至2027",
+      "severity": "critical",
+      "score": 90,
+      "scoreBreakdown": {
+        "base": 86,
+        "news": 0,
+        "quote": 5,
+        "trend": -1
+      },
+      "price": 40.08,
+      "change": -2.79,
+      "volume": 27159538,
+      "quoteTime": "2026-09-24 15:34:59",
+      "newsCount": 0,
+      "newsSamples": []
+    },
+    {
+      "rank": 4,
+      "code": "600183",
+      "name": "生益科技",
+      "sector": "PPE树脂→CCL→PCB",
+      "title": "国内CCL龙头",
+      "share": "Q1净利+106%/高速CCL放量",
+      "trigger": "沙特朱拜勒停产(全球70%PPE供应)",
+      "gapProduct": "PPE树脂/高端覆铜板",
+      "duration": "至少至2027",
+      "severity": "critical",
+      "score": 87,
+      "scoreBreakdown": {
+        "base": 83,
+        "news": 0,
+        "quote": 5,
+        "trend": -1
+      },
+      "price": 137.33,
+      "change": -4.34,
+      "volume": 43602307,
+      "quoteTime": "2026-09-24 15:34:59",
+      "newsCount": 0,
+      "newsSamples": []
+    },
+    {
+      "rank": 5,
       "code": "300408",
       "name": "三环集团",
       "sector": "MLCC 被动元器件",
@@ -78,68 +128,43 @@
       "scoreBreakdown": {
         "base": 86,
         "news": 0,
-        "quote": 0,
-        "trend": 0
+        "quote": 5,
+        "trend": -5
       },
-      "price": null,
-      "change": null,
-      "volume": null,
-      "quoteTime": null,
-      "newsCount": 0,
-      "newsSamples": []
-    },
-    {
-      "rank": 4,
-      "code": "605589",
-      "name": "圣泉集团",
-      "sector": "PPE树脂→CCL→PCB",
-      "title": "PPE树脂国产唯一认证",
-      "share": "国内头部CCL企业唯一供应商",
-      "trigger": "沙特朱拜勒停产(全球70%PPE供应)",
-      "gapProduct": "PPE树脂/高端覆铜板",
-      "duration": "至少至2027",
-      "severity": "critical",
-      "score": 86,
-      "scoreBreakdown": {
-        "base": 86,
-        "news": 0,
-        "quote": 0,
-        "trend": 0
-      },
-      "price": null,
-      "change": null,
-      "volume": null,
-      "quoteTime": null,
-      "newsCount": 0,
-      "newsSamples": []
-    },
-    {
-      "rank": 5,
-      "code": "600183",
-      "name": "生益科技",
-      "sector": "PPE树脂→CCL→PCB",
-      "title": "国内CCL龙头",
-      "share": "Q1净利+106%/高速CCL放量",
-      "trigger": "沙特朱拜勒停产(全球70%PPE供应)",
-      "gapProduct": "PPE树脂/高端覆铜板",
-      "duration": "至少至2027",
-      "severity": "critical",
-      "score": 83,
-      "scoreBreakdown": {
-        "base": 83,
-        "news": 0,
-        "quote": 0,
-        "trend": 0
-      },
-      "price": null,
-      "change": null,
-      "volume": null,
-      "quoteTime": null,
+      "price": 123.31,
+      "change": -5.44,
+      "volume": 44414874,
+      "quoteTime": "2026-09-24 16:29:15",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 6,
+      "code": "002916",
+      "name": "深南电路",
+      "sector": "PPE树脂→CCL→PCB",
+      "title": "AI服务器PCB龙头",
+      "share": "高多层PCB国内领先",
+      "trigger": "沙特朱拜勒停产(全球70%PPE供应)",
+      "gapProduct": "PPE树脂/高端覆铜板",
+      "duration": "至少至2027",
+      "severity": "critical",
+      "score": 82,
+      "scoreBreakdown": {
+        "base": 78,
+        "news": 0,
+        "quote": 5,
+        "trend": -1
+      },
+      "price": 394.5,
+      "change": -4.89,
+      "volume": 6949236,
+      "quoteTime": "2026-09-24 16:29:45",
+      "newsCount": 0,
+      "newsSamples": []
+    },
+    {
+      "rank": 7,
       "code": "688525",
       "name": "佰维存储",
       "sector": "存储芯片",
@@ -153,38 +178,13 @@
       "scoreBreakdown": {
         "base": 82,
         "news": 0,
-        "quote": 0,
-        "trend": 0
+        "quote": 5,
+        "trend": -5
       },
-      "price": null,
-      "change": null,
-      "volume": null,
-      "quoteTime": null,
-      "newsCount": 0,
-      "newsSamples": []
-    },
-    {
-      "rank": 7,
-      "code": "002916",
-      "name": "深南电路",
-      "sector": "PPE树脂→CCL→PCB",
-      "title": "AI服务器PCB龙头",
-      "share": "高多层PCB国内领先",
-      "trigger": "沙特朱拜勒停产(全球70%PPE供应)",
-      "gapProduct": "PPE树脂/高端覆铜板",
-      "duration": "至少至2027",
-      "severity": "critical",
-      "score": 78,
-      "scoreBreakdown": {
-        "base": 78,
-        "news": 0,
-        "quote": 0,
-        "trend": 0
-      },
-      "price": null,
-      "change": null,
-      "volume": null,
-      "quoteTime": null,
+      "price": 211.01,
+      "change": -5.24,
+      "volume": 19653639,
+      "quoteTime": "2026-09-24 15:34:59",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -199,17 +199,17 @@
       "gapProduct": "高纯氦气",
       "duration": "至2027底",
       "severity": "critical",
-      "score": 78,
+      "score": 82,
       "scoreBreakdown": {
         "base": 78,
         "news": 0,
-        "quote": 0,
-        "trend": 0
+        "quote": 5,
+        "trend": -1
       },
-      "price": null,
-      "change": null,
-      "volume": null,
-      "quoteTime": null,
+      "price": 31.39,
+      "change": -1.26,
+      "volume": 5468600,
+      "quoteTime": "2026-09-24 15:34:59",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -224,17 +224,17 @@
       "gapProduct": "存储模组/DRAM/NAND",
       "duration": "至2028",
       "severity": "critical",
-      "score": 76,
+      "score": 80,
       "scoreBreakdown": {
         "base": 76,
         "news": 0,
-        "quote": 0,
-        "trend": 0
+        "quote": 5,
+        "trend": -1
       },
-      "price": null,
-      "change": null,
-      "volume": null,
-      "quoteTime": null,
+      "price": 214.5,
+      "change": -3.97,
+      "volume": 25974047,
+      "quoteTime": "2026-09-24 15:34:59",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -249,17 +249,17 @@
       "gapProduct": "高容MLCC",
       "duration": "结构性长期",
       "severity": "high",
-      "score": 72,
+      "score": 76,
       "scoreBreakdown": {
         "base": 72,
         "news": 0,
-        "quote": 0,
-        "trend": 0
+        "quote": 5,
+        "trend": -1
       },
-      "price": null,
-      "change": null,
-      "volume": null,
-      "quoteTime": null,
+      "price": 56.02,
+      "change": -4.63,
+      "volume": 80302246,
+      "quoteTime": "2026-09-24 16:30:00",
       "newsCount": 0,
       "newsSamples": []
     }
