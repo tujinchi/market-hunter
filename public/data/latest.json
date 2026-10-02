@@ -1,13 +1,13 @@
 {
-  "ts": "2026-10-01T06:11:50.364Z",
-  "date": "2026/10/1",
-  "time": "14:11:50",
+  "ts": "2026-10-02T05:54:53.618Z",
+  "date": "2026/10/2",
+  "time": "13:54:53",
   "pipeline": "v2.0-auto",
   "mode": "scheduled",
   "freshness": "latest",
   "dataSource": "新浪财经 + 东方财富",
   "summary": {
-    "totalNews": 60,
+    "totalNews": 59,
     "sectorsCovered": 5,
     "stocksSelected": 10,
     "avgScore": 87
