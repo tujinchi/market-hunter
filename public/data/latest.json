@@ -1,7 +1,7 @@
 {
-  "ts": "2026-10-05T05:57:24.260Z",
-  "date": "2026/10/5",
-  "time": "13:57:24",
+  "ts": "2026-10-06T06:35:17.390Z",
+  "date": "2026/10/6",
+  "time": "14:35:17",
   "pipeline": "v2.0-auto",
   "mode": "scheduled",
   "freshness": "latest",
@@ -10,7 +10,7 @@
     "totalNews": 60,
     "sectorsCovered": 1,
     "stocksSelected": 2,
-    "avgScore": 87
+    "avgScore": 89
   },
   "results": [
     {
@@ -24,10 +24,10 @@
       "gapProduct": "高容MLCC",
       "duration": "结构性长期",
       "severity": "high",
-      "score": 94,
+      "score": 96,
       "scoreBreakdown": {
         "base": 86,
-        "news": 4,
+        "news": 6,
         "quote": 5,
         "trend": -1
       },
@@ -37,7 +37,7 @@
       "quoteTime": "2026-09-30 16:29:15",
       "newsCount": 1,
       "newsSamples": [
-        "三环集团午前上涨5% MLCC年内掀涨价潮行业从价格周期走向结构性缺货"
+        "三星电机称赢得美国客户2900亿韩元AI服务器MLCC订单"
       ]
     },
     {
@@ -51,10 +51,10 @@
       "gapProduct": "高容MLCC",
       "duration": "结构性长期",
       "severity": "high",
-      "score": 80,
+      "score": 82,
       "scoreBreakdown": {
         "base": 72,
-        "news": 4,
+        "news": 6,
         "quote": 5,
         "trend": -1
       },
@@ -64,7 +64,7 @@
       "quoteTime": "2026-09-30 16:30:00",
       "newsCount": 1,
       "newsSamples": [
-        "三环集团午前上涨5% MLCC年内掀涨价潮行业从价格周期走向结构性缺货"
+        "三星电机称赢得美国客户2900亿韩元AI服务器MLCC订单"
       ]
     }
   ]
