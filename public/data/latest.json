@@ -1,7 +1,7 @@
 {
-  "ts": "2026-10-07T06:12:58.248Z",
-  "date": "2026/10/7",
-  "time": "14:12:58",
+  "ts": "2026-10-08T06:21:11.875Z",
+  "date": "2026/10/8",
+  "time": "14:21:11",
   "pipeline": "v2.0-auto",
   "mode": "scheduled",
   "freshness": "latest",
@@ -24,17 +24,17 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 97,
+      "score": 94,
       "scoreBreakdown": {
         "base": 90,
         "news": 0,
         "quote": 5,
-        "trend": 2
+        "trend": -1
       },
-      "price": 19.37,
-      "change": 0.36,
-      "volume": 12689803,
-      "quoteTime": "2026-09-30 15:34:59",
+      "price": 18.86,
+      "change": -2.63,
+      "volume": 14190236,
+      "quoteTime": "2026-10-08 14:21:08",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -49,17 +49,17 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 93,
+      "score": 90,
       "scoreBreakdown": {
         "base": 86,
         "news": 0,
         "quote": 5,
-        "trend": 2
+        "trend": -1
       },
-      "price": 16.88,
-      "change": 0.78,
-      "volume": 78078208,
-      "quoteTime": "2026-09-30 15:34:59",
+      "price": 16.61,
+      "change": -1.6,
+      "volume": 62611442,
+      "quoteTime": "2026-10-08 14:21:08",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -81,10 +81,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 117.33,
-      "change": -1.1,
-      "volume": 21637967,
-      "quoteTime": "2026-09-30 16:29:15",
+      "price": 115.25,
+      "change": -1.77,
+      "volume": 34099983,
+      "quoteTime": "2026-10-08 14:21:09",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -106,10 +106,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 35.67,
-      "change": -1.14,
-      "volume": 15721003,
-      "quoteTime": "2026-09-30 15:34:59",
+      "price": 35.6,
+      "change": -0.2,
+      "volume": 34914430,
+      "quoteTime": "2026-10-08 14:21:09",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -124,17 +124,17 @@
       "gapProduct": "PPE树脂/高端覆铜板",
       "duration": "至少至2027",
       "severity": "critical",
-      "score": 87,
+      "score": 90,
       "scoreBreakdown": {
         "base": 83,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 129.96,
-      "change": -2.27,
-      "volume": 35375754,
-      "quoteTime": "2026-09-30 15:34:59",
+      "price": 130.76,
+      "change": 0.62,
+      "volume": 64491552,
+      "quoteTime": "2026-10-08 14:21:10",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -156,10 +156,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 192.35,
-      "change": -3.15,
-      "volume": 13276166,
-      "quoteTime": "2026-09-30 15:34:59",
+      "price": 182.78,
+      "change": -4.98,
+      "volume": 13945636,
+      "quoteTime": "2026-10-08 14:21:09",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -181,10 +181,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 31.25,
-      "change": 3.03,
-      "volume": 8547432,
-      "quoteTime": "2026-09-30 15:34:59",
+      "price": 31.55,
+      "change": 0.96,
+      "volume": 6796902,
+      "quoteTime": "2026-10-08 14:21:10",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -206,10 +206,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 373.01,
-      "change": -0.69,
-      "volume": 5417523,
-      "quoteTime": "2026-09-30 16:29:00",
+      "price": 365.34,
+      "change": -2.06,
+      "volume": 7793150,
+      "quoteTime": "2026-10-08 14:21:09",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -231,10 +231,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 202.31,
-      "change": -4.84,
-      "volume": 26524480,
-      "quoteTime": "2026-09-30 15:34:59",
+      "price": 196.17,
+      "change": -3.03,
+      "volume": 27901008,
+      "quoteTime": "2026-10-08 14:21:10",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -249,17 +249,17 @@
       "gapProduct": "高容MLCC",
       "duration": "结构性长期",
       "severity": "high",
-      "score": 76,
+      "score": 79,
       "scoreBreakdown": {
         "base": 72,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 49.61,
-      "change": -3.12,
-      "volume": 53429662,
-      "quoteTime": "2026-09-30 16:30:00",
+      "price": 50.16,
+      "change": 1.11,
+      "volume": 76043289,
+      "quoteTime": "2026-10-08 14:21:09",
       "newsCount": 0,
       "newsSamples": []
     }
