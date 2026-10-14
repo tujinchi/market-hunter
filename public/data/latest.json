@@ -1,7 +1,7 @@
 {
-  "ts": "2026-10-13T06:54:53.816Z",
-  "date": "2026/10/13",
-  "time": "14:54:53",
+  "ts": "2026-10-14T05:05:48.213Z",
+  "date": "2026/10/14",
+  "time": "13:05:48",
   "pipeline": "v2.0-auto",
   "mode": "scheduled",
   "freshness": "latest",
@@ -31,10 +31,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 18.79,
-      "change": 1.84,
-      "volume": 25327579,
-      "quoteTime": "2026-10-13 14:54:51",
+      "price": 19.07,
+      "change": 1.22,
+      "volume": 16608936,
+      "quoteTime": "2026-10-14 13:05:46",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -56,10 +56,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 33.64,
-      "change": 0.57,
-      "volume": 19813850,
-      "quoteTime": "2026-10-13 14:54:52",
+      "price": 33.62,
+      "change": 0.06,
+      "volume": 8845679,
+      "quoteTime": "2026-10-14 13:05:45",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -81,10 +81,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 16.99,
-      "change": -0.29,
-      "volume": 78010230,
-      "quoteTime": "2026-10-13 14:54:51",
+      "price": 16.79,
+      "change": -1.47,
+      "volume": 45916168,
+      "quoteTime": "2026-10-14 13:05:46",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -106,10 +106,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 102.65,
-      "change": -0.92,
-      "volume": 45808436,
-      "quoteTime": "2026-10-13 14:54:51",
+      "price": 102.3,
+      "change": -0.49,
+      "volume": 15820548,
+      "quoteTime": "2026-10-14 13:05:45",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -131,10 +131,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 122.41,
-      "change": 2.01,
-      "volume": 57274880,
-      "quoteTime": "2026-10-13 14:54:51",
+      "price": 122.66,
+      "change": 0.1,
+      "volume": 31538369,
+      "quoteTime": "2026-10-14 13:05:45",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -156,10 +156,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 171.68,
-      "change": -0.65,
-      "volume": 16209819,
-      "quoteTime": "2026-10-13 14:54:51",
+      "price": 168.65,
+      "change": -1.79,
+      "volume": 6194064,
+      "quoteTime": "2026-10-14 13:05:44",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -181,10 +181,10 @@
         "quote": 5,
         "trend": 2
       },
-      "price": 336.58,
-      "change": 2.68,
-      "volume": 8221012,
-      "quoteTime": "2026-10-13 14:54:51",
+      "price": 345.51,
+      "change": 2.45,
+      "volume": 5885799,
+      "quoteTime": "2026-10-14 13:05:45",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -199,17 +199,17 @@
       "gapProduct": "高纯氦气",
       "duration": "至2027底",
       "severity": "critical",
-      "score": 85,
+      "score": 82,
       "scoreBreakdown": {
         "base": 78,
         "news": 0,
         "quote": 5,
-        "trend": 2
+        "trend": -1
       },
-      "price": 30.5,
-      "change": 0.46,
-      "volume": 5453337,
-      "quoteTime": "2026-10-13 14:54:52",
+      "price": 30.43,
+      "change": -0.29,
+      "volume": 4250420,
+      "quoteTime": "2026-10-14 13:05:45",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -231,10 +231,10 @@
         "quote": 5,
         "trend": -1
       },
-      "price": 184.5,
-      "change": -3.83,
-      "volume": 34486771,
-      "quoteTime": "2026-10-13 14:54:52",
+      "price": 179.35,
+      "change": -2.95,
+      "volume": 11630563,
+      "quoteTime": "2026-10-14 13:05:45",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -249,17 +249,17 @@
       "gapProduct": "高容MLCC",
       "duration": "结构性长期",
       "severity": "high",
-      "score": 76,
+      "score": 79,
       "scoreBreakdown": {
         "base": 72,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 43.26,
-      "change": -1.14,
-      "volume": 93864479,
-      "quoteTime": "2026-10-13 14:54:51",
+      "price": 44.09,
+      "change": 1.87,
+      "volume": 54929689,
+      "quoteTime": "2026-10-14 13:05:45",
       "newsCount": 0,
       "newsSamples": []
     }
