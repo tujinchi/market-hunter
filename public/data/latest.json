@@ -1,7 +1,7 @@
 {
-  "ts": "2026-11-16T06:52:43.875Z",
-  "date": "2026/11/16",
-  "time": "14:52:43",
+  "ts": "2026-11-17T08:11:22.882Z",
+  "date": "2026/11/17",
+  "time": "16:11:22",
   "pipeline": "v2.0-auto",
   "mode": "scheduled",
   "freshness": "latest",
@@ -10,7 +10,7 @@
     "totalNews": 60,
     "sectorsCovered": 5,
     "stocksSelected": 10,
-    "avgScore": 83
+    "avgScore": 86
   },
   "results": [
     {
@@ -24,17 +24,17 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 94,
+      "score": 97,
       "scoreBreakdown": {
         "base": 90,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 15.71,
-      "change": -3.2,
-      "volume": 19862530,
-      "quoteTime": "2026-11-16 14:52:40",
+      "price": 16.35,
+      "change": 3.88,
+      "volume": 32636680,
+      "quoteTime": "2026-11-17 15:34:58",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -49,47 +49,22 @@
       "gapProduct": "半导体级钼",
       "duration": "矿开3-5年",
       "severity": "high",
-      "score": 90,
+      "score": 93,
       "scoreBreakdown": {
         "base": 86,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 12.49,
-      "change": -3.03,
-      "volume": 159969249,
-      "quoteTime": "2026-11-16 14:52:40",
+      "price": 12.57,
+      "change": 0.56,
+      "volume": 187966241,
+      "quoteTime": "2026-11-17 15:34:58",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 3,
-      "code": "300408",
-      "name": "三环集团",
-      "sector": "MLCC 被动元器件",
-      "title": "国产MLCC全球份额第一",
-      "share": "全球2.5%/粉体100%自给",
-      "trigger": "AI服务器MLCC用量8-12倍，高容涨50-60%",
-      "gapProduct": "高容MLCC",
-      "duration": "结构性长期",
-      "severity": "high",
-      "score": 86,
-      "scoreBreakdown": {
-        "base": 86,
-        "news": 0,
-        "quote": 5,
-        "trend": -5
-      },
-      "price": 64.29,
-      "change": -9.78,
-      "volume": 53011853,
-      "quoteTime": "2026-11-16 14:52:42",
-      "newsCount": 0,
-      "newsSamples": []
-    },
-    {
-      "rank": 4,
       "code": "605589",
       "name": "圣泉集团",
       "sector": "PPE树脂→CCL→PCB",
@@ -99,17 +74,42 @@
       "gapProduct": "PPE树脂/高端覆铜板",
       "duration": "至少至2027",
       "severity": "critical",
-      "score": 86,
+      "score": 91,
       "scoreBreakdown": {
         "base": 86,
         "news": 0,
         "quote": 5,
-        "trend": -5
+        "trend": 0
       },
-      "price": 25.55,
-      "change": -5.23,
-      "volume": 15755704,
-      "quoteTime": "2026-11-16 14:52:41",
+      "price": 25.62,
+      "change": null,
+      "volume": 14407248,
+      "quoteTime": "2026-11-17 15:34:58",
+      "newsCount": 0,
+      "newsSamples": []
+    },
+    {
+      "rank": 4,
+      "code": "300408",
+      "name": "三环集团",
+      "sector": "MLCC 被动元器件",
+      "title": "国产MLCC全球份额第一",
+      "share": "全球2.5%/粉体100%自给",
+      "trigger": "AI服务器MLCC用量8-12倍，高容涨50-60%",
+      "gapProduct": "高容MLCC",
+      "duration": "结构性长期",
+      "severity": "high",
+      "score": 90,
+      "scoreBreakdown": {
+        "base": 86,
+        "news": 0,
+        "quote": 5,
+        "trend": -1
+      },
+      "price": 63.11,
+      "change": -1.99,
+      "volume": 53287242,
+      "quoteTime": "2026-11-17 15:35:45",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -124,17 +124,17 @@
       "gapProduct": "PPE树脂/高端覆铜板",
       "duration": "至少至2027",
       "severity": "critical",
-      "score": 83,
+      "score": 87,
       "scoreBreakdown": {
         "base": 83,
         "news": 0,
         "quote": 5,
-        "trend": -5
+        "trend": -1
       },
-      "price": 61.34,
-      "change": -9.99,
-      "volume": 90164460,
-      "quoteTime": "2026-11-16 14:52:40",
+      "price": 58.61,
+      "change": -4.45,
+      "volume": 94174461,
+      "quoteTime": "2026-11-17 15:34:58",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -149,17 +149,17 @@
       "gapProduct": "存储模组/DRAM/NAND",
       "duration": "至2028",
       "severity": "critical",
-      "score": 82,
+      "score": 86,
       "scoreBreakdown": {
         "base": 82,
         "news": 0,
         "quote": 5,
-        "trend": -5
+        "trend": -1
       },
-      "price": 124.89,
-      "change": -7.91,
-      "volume": 16087218,
-      "quoteTime": "2026-11-16 14:52:40",
+      "price": 123.57,
+      "change": -1.36,
+      "volume": 17038502,
+      "quoteTime": "2026-11-17 15:34:58",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -174,17 +174,17 @@
       "gapProduct": "高纯氦气",
       "duration": "至2027底",
       "severity": "critical",
-      "score": 82,
+      "score": 85,
       "scoreBreakdown": {
         "base": 78,
         "news": 0,
         "quote": 5,
-        "trend": -1
+        "trend": 2
       },
-      "price": 26.89,
-      "change": -1.36,
-      "volume": 7111353,
-      "quoteTime": "2026-11-16 14:52:40",
+      "price": 27.41,
+      "change": 1.82,
+      "volume": 7702147,
+      "quoteTime": "2026-11-17 15:34:58",
       "newsCount": 0,
       "newsSamples": []
     },
@@ -199,22 +199,47 @@
       "gapProduct": "PPE树脂/高端覆铜板",
       "duration": "至少至2027",
       "severity": "critical",
-      "score": 78,
+      "score": 82,
       "scoreBreakdown": {
         "base": 78,
         "news": 0,
         "quote": 5,
-        "trend": -5
+        "trend": -1
       },
-      "price": 187.43,
-      "change": -9.98,
-      "volume": 14164801,
-      "quoteTime": "2026-11-16 14:52:42",
+      "price": 182.9,
+      "change": -2.48,
+      "volume": 13061923,
+      "quoteTime": "2026-11-17 15:35:45",
       "newsCount": 0,
       "newsSamples": []
     },
     {
       "rank": 9,
+      "code": "000636",
+      "name": "风华高科",
+      "sector": "MLCC 被动元器件",
+      "title": "国内MLCC产能第一",
+      "share": "月产能635亿只",
+      "trigger": "AI服务器MLCC用量8-12倍，高容涨50-60%",
+      "gapProduct": "高容MLCC",
+      "duration": "结构性长期",
+      "severity": "high",
+      "score": 76,
+      "scoreBreakdown": {
+        "base": 72,
+        "news": 0,
+        "quote": 5,
+        "trend": -1
+      },
+      "price": 27.55,
+      "change": -1.4,
+      "volume": 60907285,
+      "quoteTime": "2026-11-17 15:35:45",
+      "newsCount": 0,
+      "newsSamples": []
+    },
+    {
+      "rank": 10,
       "code": "688008",
       "name": "澜起科技",
       "sector": "存储芯片",
@@ -231,35 +256,10 @@
         "quote": 5,
         "trend": -5
       },
-      "price": 139.44,
-      "change": -7.64,
-      "volume": 35479014,
-      "quoteTime": "2026-11-16 14:52:42",
-      "newsCount": 0,
-      "newsSamples": []
-    },
-    {
-      "rank": 10,
-      "code": "000636",
-      "name": "风华高科",
-      "sector": "MLCC 被动元器件",
-      "title": "国内MLCC产能第一",
-      "share": "月产能635亿只",
-      "trigger": "AI服务器MLCC用量8-12倍，高容涨50-60%",
-      "gapProduct": "高容MLCC",
-      "duration": "结构性长期",
-      "severity": "high",
-      "score": 72,
-      "scoreBreakdown": {
-        "base": 72,
-        "news": 0,
-        "quote": 5,
-        "trend": -5
-      },
-      "price": 27.84,
-      "change": -8.3,
-      "volume": 55454081,
-      "quoteTime": "2026-11-16 14:52:42",
+      "price": 130.6,
+      "change": -6.57,
+      "volume": 47446235,
+      "quoteTime": "2026-11-17 15:34:58",
       "newsCount": 0,
       "newsSamples": []
     }
